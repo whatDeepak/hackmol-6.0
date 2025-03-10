@@ -12,7 +12,56 @@ import {
   BookOpen,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-export default function AboutUs() {
+import { useState } from "react";
+export default function AboutUs({ aboutUsSmallStars, aboutUsBigStars }: any) {
+  const images = [
+    {
+      src: "https://res.cloudinary.com/ddd4ftror/image/upload/v1741551607/hackmol/otfahhaq0c2psi8hipl3.png",
+      alt: "HackMol 5.0 - Memories from Another Realm",
+      caption: "HackMol 5.0 • Memories from Another Realm",
+    },
+    {
+      src: "https://res.cloudinary.com/ddd4ftror/image/upload/v1741584529/hackmol/jdu0gsockhfokokiud6l.jpg",
+      alt: "IOTA Event Image",
+      caption: "Another Amazing Event",
+    },
+    {
+      src: "https://res.cloudinary.com/ddd4ftror/image/upload/v1741584529/hackmol/jdu0gsockhfokokiud6l.jpg",
+      alt: "Third Event Image",
+      caption: "More Exciting Moments",
+    },
+    {
+      src: "https://res.cloudinary.com/ddd4ftror/image/upload/v1741584529/hackmol/jdu0gsockhfokokiud6l.jpg",
+      alt: "Fourth Event Image",
+      caption: "Final Celebration",
+    },
+    {
+      src: "https://res.cloudinary.com/ddd4ftror/image/upload/v1741584529/hackmol/jdu0gsockhfokokiud6l.jpg",
+      alt: "Fifth Event Image",
+      caption: "Team Photo",
+    },
+  ];
+
+  // State to track the current image index
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Functions to navigate between images
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const goToSlide = (slideIndex: any) => {
+    setCurrentIndex(slideIndex);
+  };
+
   return (
     <main
       className={cn(
@@ -24,28 +73,46 @@ export default function AboutUs() {
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-white/20 rounded-full"
+            className={cn(
+              "absolute w-1.5 h-1.5  rounded-full animate-float",
+              i % 4 == 0 ? "bg-[#0ce3ff]" : "bg-white/20"
+            )}
             style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
+              top: aboutUsSmallStars[i]?.top || 0,
+              left: aboutUsSmallStars[i]?.left || 0,
             }}
           />
+        ))}
+      </div>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(5)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-6 h-6 bg-[#4fd2d942] rounded-full animate-float "
+            style={{
+              top: aboutUsBigStars[i]?.top || 0,
+              left: aboutUsBigStars[i]?.left || 0,
+            }}
+          >
+            <div className="absolute top-[50%] left-[50% ] transform translate-x-[150%] -translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float " />
+          </div>
         ))}
       </div>
 
       <div className="container mx-auto px-4 py-12">
         {/* Header */}
-        <header className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold mb-2 font-custom">
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="text-5xl md:text-6xl font-bold mb-2 font-custom w-full ">
             <span className={`text-[#0ce3ff] `}>About</span> HackMol 6.0
-          </h1>
+          </div>
+          <div className="h-0.5 max-w-xl bg-gradient-to-r from-transparent via-[#0ce3ff] to-transparent mx-auto mb-2"></div>
           <p className="text-[#0ce3ff] text-lg tracking-wider">
             EXPLORE THE DIGITAL UNIVERSE
           </p>
-        </header>
+        </div>
 
         {/* Main content */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start ">
           {/* Left column */}
           <div className="space-y-8">
             <div className="space-y-4">
@@ -54,11 +121,11 @@ export default function AboutUs() {
                 Legacy! <span className="text-[#0ce3ff] inline-block ">◇</span>
               </h2>
               <p className="text-gray-300 leading-relaxed">
-                The sixth edition of HackMol, organised by IOTA & GDGC NIT Jalandhar,
-                is your battleground for innovation. This 30-hour hackathon
-                unites warriors of code—both seasoned champions and rising
-                contenders—to forge groundbreaking solutions across digital
-                realms.
+                The sixth edition of HackMol, organised by IOTA & GDGC NIT
+                Jalandhar, is your battleground for innovation. This 30-hour
+                hackathon unites warriors of code—both seasoned champions and
+                rising contenders—to forge groundbreaking solutions across
+                digital realms.
               </p>
             </div>
 
@@ -110,24 +177,51 @@ export default function AboutUs() {
             </div>
 
             {/* Image carousel - updated to match design */}
-            <div className="relative border border-[#0ce3ff]/30 rounded-lg overflow-hidden">
+            <div className="relative border overflow-hidden border-transparent transition-colors p-3">
+              <div className="absolute top-0 left-0 w-5 h-5 border-t-2 border-l-2 border-[#0ce3ff]"></div>
+              <div className="absolute top-0 right-0 w-5 h-5 border-t-2 border-r-2 border-[#0ce3ff]"></div>
+              <div className="absolute bottom-0 left-0 w-5 h-5 border-b-2 border-l-2 border-[#0ce3ff]"></div>
+              <div className="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-[#0ce3ff]"></div>
               <div className="relative aspect-video">
                 <Image
-                  src="https://res.cloudinary.com/ddd4ftror/image/upload/v1741551607/hackmol/otfahhaq0c2psi8hipl3.png"
-                  alt="HackMol 5.0 - Memories from Another Realm"
+                  src={images[currentIndex].src}
+                  alt={images[currentIndex].alt}
                   width={800}
                   height={450}
-                  className="object-cover w-full h-full"
+                  className="object-cover w-full h-full rounded-lg"
                 />
-                
+
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
                   <p className="text-[#0ce3ff]">
-                    HackMol 5.0 • Memories from Another Realm
+                    {images[currentIndex].caption}
                   </p>
                 </div>
-              </div>
+                <button
+                  onClick={goToPrevious}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 rounded-full flex items-center justify-center text-[#0ce3ff] hover:bg-black/70 transition-colors"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
 
-              
+                <button
+                  onClick={goToNext}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 rounded-full flex items-center justify-center text-[#0ce3ff] hover:bg-black/70 transition-colors"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+
+                <div className="absolute bottom-4 right-4 flex gap-1">
+                  {images.map((_, i) => (
+                    <div
+                      key={i}
+                      onClick={() => goToSlide(i)}
+                      className={`w-2 h-2 rounded-full cursor-pointer ${
+                        i === currentIndex ? "bg-[#0ce3ff]" : "bg-white/30"
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -135,8 +229,10 @@ export default function AboutUs() {
         {/* Features section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
           <div className="flex items-start gap-4 p-4">
-            <div className="w-12 h-12 rounded-full border border-[#0ce3ff] flex items-center justify-center text-[#0ce3ff] shrink-0">
+            <div className="relative w-12 h-12 rounded-lg border border-[#0ce3ff] flex items-center justify-center text-[#0ce3ff] shrink-0">
               <Clock className="w-6 h-6" />
+              <div className="absolute top-0 right-0 transform translate-x-[50%] -translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
+              <div className="absolute bottom-0 left-0 transform -translate-x-[50%] translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
             </div>
             <div>
               <h3 className="text-xl font-bold mb-1">30 Hours</h3>
@@ -145,8 +241,10 @@ export default function AboutUs() {
           </div>
 
           <div className="flex items-start gap-4 p-4">
-            <div className="w-12 h-12 rounded-full border border-[#0ce3ff] flex items-center justify-center text-[#0ce3ff] shrink-0">
+            <div className="relative w-12 h-12 rounded-lg border border-[#0ce3ff] flex items-center justify-center text-[#0ce3ff] shrink-0">
               <Trophy className="w-6 h-6" />
+              <div className="absolute top-0 right-0 transform translate-x-[50%] -translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
+              <div className="absolute bottom-0 left-0 transform -translate-x-[50%] translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
             </div>
             <div>
               <h3 className="text-xl font-bold mb-1">Amazing Prizes</h3>
@@ -155,8 +253,10 @@ export default function AboutUs() {
           </div>
 
           <div className="flex items-start gap-4 p-4">
-            <div className="w-12 h-12 rounded-full border border-[#0ce3ff] flex items-center justify-center text-[#0ce3ff] shrink-0">
+            <div className="relative w-12 h-12 rounded-lg border border-[#0ce3ff] flex items-center justify-center text-[#0ce3ff] shrink-0">
               <Zap className="w-6 h-6" />
+              <div className="absolute top-0 right-0 transform translate-x-[50%] -translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
+              <div className="absolute bottom-0 left-0 transform -translate-x-[50%] translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
             </div>
             <div>
               <h3 className="text-xl font-bold mb-1">Workshops</h3>
@@ -165,8 +265,10 @@ export default function AboutUs() {
           </div>
 
           <div className="flex items-start gap-4 p-4">
-            <div className="w-12 h-12 rounded-full border border-[#0ce3ff] flex items-center justify-center text-[#0ce3ff] shrink-0">
+            <div className="relative w-12 h-12 rounded-lg border border-[#0ce3ff] flex items-center justify-center text-[#0ce3ff] shrink-0">
               <Lightbulb className="w-6 h-6" />
+              <div className="absolute top-0 right-0 transform translate-x-[50%] -translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
+              <div className="absolute bottom-0 left-0 transform -translate-x-[50%] translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
             </div>
             <div>
               <h3 className="text-xl font-bold mb-1">Mentorship</h3>
