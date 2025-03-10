@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, use } from "react";
 import Image from "next/image";
 import { Meteors } from "@/components/magicui/meteors";
 import AboutUs from "@/components/About";
@@ -14,10 +14,14 @@ export default function Home() {
   const [stars, setStars] = useState<
     { x: number; y: number; size: number; opacity: number; speed: number }[]
   >([]);
-
+  const [aboutUsSmallStars, setAboutUsStars] = useState<
+    { top: string; left: string }[]
+  >([]);
+  const [aboutUsBigStars, setAboutUsBigStars] = useState<
+    { top: string; left: string }[]>([])
+  
   useEffect(() => {
     setIsMounted(true);
-
     // Generate random stars
     const generatedStars = Array.from({ length: 220 }, () => ({
       x: Math.random() * 100,
@@ -27,7 +31,16 @@ export default function Home() {
       speed: Math.random() * 0.05 + 0.01,
     }));
     setStars(generatedStars);
-
+    const stars = [...Array(20)].map((_, i) => ({
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+    }));
+    if (aboutUsSmallStars.length == 0) setAboutUsStars(stars);
+    const bigstars = [...Array(5)].map((_, i) => ({
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+    }));
+    if (aboutUsBigStars.length == 0) setAboutUsBigStars(bigstars);
     const handleScroll = () => {
       if (parallaxRef.current) {
         const scrollPosition = window.scrollY;
@@ -384,7 +397,7 @@ export default function Home() {
           }
         `}</style>
       </main>
-      <AboutUs></AboutUs>
+      <AboutUs aboutUsSmallStars={aboutUsSmallStars} aboutUsBigStars={aboutUsBigStars}></AboutUs>
     </>
   );
 }
