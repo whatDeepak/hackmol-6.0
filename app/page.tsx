@@ -4,6 +4,7 @@ import { useEffect, useState, useRef, use } from "react";
 import Image from "next/image";
 import { Meteors } from "@/components/magicui/meteors";
 import AboutUs from "@/components/About";
+import EventTimeline from "@/components/eventTimeline/EventTimeLine";
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -398,6 +399,7 @@ export default function Home() {
         `}</style>
       </main>
       <AboutUs aboutUsSmallStars={aboutUsSmallStars} aboutUsBigStars={aboutUsBigStars}></AboutUs>
+      <EventTimeline title="Event Timeline" subtitle="YOUR GUIDE TO HACKMOL 6.0"></EventTimeline>
     </>
   );
 }
