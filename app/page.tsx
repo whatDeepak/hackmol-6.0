@@ -4,6 +4,8 @@ import { useEffect, useState, useRef, use } from "react";
 import Image from "next/image";
 import { Meteors } from "@/components/magicui/meteors";
 import AboutUs from "@/components/About";
+import OurSpeakers from "@/components/OurSpeakers";
+import FAQSection from "@/components/Faq";
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -18,8 +20,9 @@ export default function Home() {
     { top: string; left: string }[]
   >([]);
   const [aboutUsBigStars, setAboutUsBigStars] = useState<
-    { top: string; left: string }[]>([])
-  
+    { top: string; left: string }[]
+  >([]);
+
   useEffect(() => {
     setIsMounted(true);
     // Generate random stars
@@ -397,7 +400,12 @@ export default function Home() {
           }
         `}</style>
       </main>
-      <AboutUs aboutUsSmallStars={aboutUsSmallStars} aboutUsBigStars={aboutUsBigStars}></AboutUs>
+      <AboutUs
+        aboutUsSmallStars={aboutUsSmallStars}
+        aboutUsBigStars={aboutUsBigStars}
+      ></AboutUs>
+      <OurSpeakers></OurSpeakers>
+      <FAQSection />
     </>
   );
 }
