@@ -39,9 +39,9 @@ const Footer = () => {
       <div className="mt-6 relative flex flex-col justify-center items-center mb-0">
         <svg className="w-full h-56 mb-0" viewBox="0 0 700 220">
           <path id="curve" d="M50,200 Q350,-40 650,200" fill="transparent" />
-          <text className="fill-white text-2xl font-custom tracking-[0.2em]">
+          <text className="fill-white text-2xl font-custom tracking-[0.3em]">
             <textPath href="#curve" startOffset="50%" textAnchor="middle" className="text-[#E3DAAF]">
-              PRESENTED BY HACKMOL | GDSC 2025
+              PRESENTED BY HACKMOL || GDSC X IOTA 
             </textPath>
           </text>
         </svg>
