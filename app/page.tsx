@@ -4,7 +4,13 @@ import { useEffect, useState, useRef, use } from "react";
 import Image from "next/image";
 import { Meteors } from "@/components/magicui/meteors";
 import AboutUs from "@/components/About";
-import EventTimeline from "@/components/eventTimeline/EventTimeLine";
+import OurSpeakers from "@/components/OurSpeakers";
+import FAQSection from "@/components/Faq";
+import MainTracks from "@/components/MainTrack";
+import SponserTrackCarousel from "@/components/SponserTrack";
+import Footer from "@/components/Footer";
+import PrizesSection from "@/components/Prize_Section/PrizesSection";
+
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -15,33 +21,35 @@ export default function Home() {
   const [stars, setStars] = useState<
     { x: number; y: number; size: number; opacity: number; speed: number }[]
   >([]);
-  const [aboutUsSmallStars, setAboutUsStars] = useState<
-    { top: string; left: string }[]
-  >([]);
-  const [aboutUsBigStars, setAboutUsBigStars] = useState<
-    { top: string; left: string }[]>([])
-  
+  // const [aboutUsSmallStars, setAboutUsStars] = useState<
+  //   { top: string; left: string }[]
+  // >([]);
+  // const [aboutUsBigStars, setAboutUsBigStars] = useState<
+  //   { top: string; left: string }[]
+  // >([]);
+
   useEffect(() => {
     setIsMounted(true);
     // Generate random stars
+    const adjustedSize=window.innerWidth<768?0.5:1.5;
     const generatedStars = Array.from({ length: 220 }, () => ({
       x: Math.random() * 100,
       y: Math.random() * 100,
-      size: Math.random() * 3 + 1.5,
+      size: Math.random() * 3 + adjustedSize,
       opacity: Math.random() * 0.5 + 0.3,
       speed: Math.random() * 0.05 + 0.01,
     }));
     setStars(generatedStars);
-    const stars = [...Array(20)].map((_, i) => ({
-      top: `${Math.random() * 100}%`,
-      left: `${Math.random() * 100}%`,
-    }));
-    if (aboutUsSmallStars.length == 0) setAboutUsStars(stars);
-    const bigstars = [...Array(5)].map((_, i) => ({
-      top: `${Math.random() * 100}%`,
-      left: `${Math.random() * 100}%`,
-    }));
-    if (aboutUsBigStars.length == 0) setAboutUsBigStars(bigstars);
+    // const stars = [...Array(20)].map((_, i) => ({
+    //   top: `${Math.random() * 100}%`,
+    //   left: `${Math.random() * 100}%`,
+    // }));
+    // if (aboutUsSmallStars.length == 0) setAboutUsStars(stars);
+    // const bigstars = [...Array(5)].map((_, i) => ({
+    //   top: `${Math.random() * 100}%`,
+    //   left: `${Math.random() * 100}%`,
+    // }));
+    // if (aboutUsBigStars.length == 0) setAboutUsBigStars(bigstars);
     const handleScroll = () => {
       if (parallaxRef.current) {
         const scrollPosition = window.scrollY;
@@ -59,7 +67,7 @@ export default function Home() {
   const axePosition = isMounted ? 0 + scrollY * 0.22 : 0;
   const frontMountainPosition = isMounted ? 0 + scrollY * 0.25 : 0;
   const crowPosition = isMounted ? scrollY * 0.3 : 0;
-
+  
   const titleOpacity = isMounted ? 1 - scrollY * 0.002 : 1;
   const titlePosition = isMounted ? 0 + scrollY * 0.4 : 0;
 
@@ -81,6 +89,7 @@ export default function Home() {
           <Meteors number={8} className="z-0 pointer-events-none " />
           {/* Stars */}
           {stars.map((star, index) => (
+            
             <div
               key={index}
               className="absolute rounded-full bg-white animate-twinkle"
@@ -398,8 +407,14 @@ export default function Home() {
           }
         `}</style>
       </main>
-      <AboutUs aboutUsSmallStars={aboutUsSmallStars} aboutUsBigStars={aboutUsBigStars}></AboutUs>
-      <EventTimeline title="Event Timeline" subtitle="YOUR GUIDE TO HACKMOL 6.0"></EventTimeline>
+      <AboutUs
+      ></AboutUs>
+      <MainTracks/>
+      <SponserTrackCarousel/>
+      <PrizesSection/>
+      <OurSpeakers></OurSpeakers>
+      <FAQSection />
+      <Footer/>
     </>
   );
 }

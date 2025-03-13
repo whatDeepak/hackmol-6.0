@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-export default function AboutUs({ aboutUsSmallStars, aboutUsBigStars }: any) {
+export default function AboutUs() {
   const images = [
     {
       src: "https://res.cloudinary.com/ddd4ftror/image/upload/v1741551607/hackmol/otfahhaq0c2psi8hipl3.png",
@@ -65,7 +65,7 @@ export default function AboutUs({ aboutUsSmallStars, aboutUsBigStars }: any) {
   return (
     <main
       className={cn(
-        "min-h-screen bg-[#0f1524] text-white overflow-hidden relative "
+        "min-h-screen bg-[#0f1524] py-20 text-white overflow-hidden relative "
       )}
     >
       {/* Background dots */}
@@ -74,12 +74,12 @@ export default function AboutUs({ aboutUsSmallStars, aboutUsBigStars }: any) {
           <div
             key={i}
             className={cn(
-              "absolute w-1.5 h-1.5  rounded-full animate-float",
+              "absolute w-1 h-1  rounded-full animate-float",
               i % 4 == 0 ? "bg-[#0ce3ff]" : "bg-white/20"
             )}
             style={{
-              top: aboutUsSmallStars[i]?.top || 0,
-              left: aboutUsSmallStars[i]?.left || 0,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
             }}
           />
         ))}
@@ -90,8 +90,8 @@ export default function AboutUs({ aboutUsSmallStars, aboutUsBigStars }: any) {
             key={i}
             className="absolute w-6 h-6 bg-[#4fd2d942] rounded-full animate-float "
             style={{
-              top: aboutUsBigStars[i]?.top || 0,
-              left: aboutUsBigStars[i]?.left || 0,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
             }}
           >
             <div className="absolute top-[50%] left-[50% ] transform translate-x-[150%] -translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float " />
