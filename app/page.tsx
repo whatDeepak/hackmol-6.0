@@ -9,6 +9,7 @@ import FAQSection from "@/components/Faq";
 import MainTracks from "@/components/MainTrack";
 import SponserTrackCarousel from "@/components/SponserTrack";
 import Footer from "@/components/Footer";
+import PrizesSection from "@/components/Prize_Section/PrizesSection";
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -409,6 +410,7 @@ export default function Home() {
       ></AboutUs>
       <MainTracks/>
       <SponserTrackCarousel/>
+      <PrizesSection/>
       <OurSpeakers></OurSpeakers>
       <FAQSection />
       <Footer/>
