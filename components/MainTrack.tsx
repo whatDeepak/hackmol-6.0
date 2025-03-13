@@ -33,7 +33,7 @@ export default function MainTracks() {
               className="relative py-2 px-4 text-black font-bold text-center text-xl border-b-2 border-black"
               style={{
                 background:
-                  "linear-gradient(to right, #FFDA69 0%, #F1BE22 0%, #FADB7E 23%, #E9CD79 51%, #FBE08D 77%, #F4CD57 98%);",
+                  "linear-gradient(to right, #FFDA69 0%, #F1BE22 0%, #FADB7E 23%, #E9CD79 51%, #FBE08D 77%, #F4CD57 98%)",
               }}
             >
               <div className="relative z-20 h-[48px] flex items-center justify-center">
@@ -117,7 +117,7 @@ export default function MainTracks() {
                 className="relative py-2 px-4 text-black font-bold text-xl"
                 style={{
                   background:
-                    "linear-gradient(to right, #9CA3AA 0%, #D9DADB 28%, #9CA3AA 52%, #D9DADB 84%, #9CA3AA 100%);",
+                    "linear-gradient(to right, #9CA3AA 0%, #D9DADB 28%, #9CA3AA 52%, #D9DADB 84%, #9CA3AA 100%)",
                 }}
               >
                 <div className="relative z-10 h-[48px] flex justify-center items-center">
@@ -187,7 +187,7 @@ export default function MainTracks() {
                 className="relative py-2 px-4 text-black font-bold text-center text-xl"
                 style={{
                   background:
-                    "linear-gradient(to right, #9015A5 0%, #BD49D0 14%, #AB45BE 36%, #9015A5 51%, #AB45BE 64%, #BD49D0 84%,#9015A5 100%);",
+                    "linear-gradient(to right, #9015A5 0%, #BD49D0 14%, #AB45BE 36%, #9015A5 51%, #AB45BE 64%, #BD49D0 84%,#9015A5 100%)",
                 }}
               >
                 <div className="relative z-10 h-[48px] flex items-center justify-center">
