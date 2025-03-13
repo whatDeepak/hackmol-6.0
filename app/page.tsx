@@ -11,6 +11,7 @@ import SponserTrackCarousel from "@/components/SponserTrack";
 import Footer from "@/components/Footer";
 import PrizesSection from "@/components/Prize_Section/PrizesSection";
 
+
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const parallaxRef = useRef<HTMLDivElement>(null);

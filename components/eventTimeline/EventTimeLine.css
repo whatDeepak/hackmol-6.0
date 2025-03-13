@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0c0f1d;
+    color: white;
+}
+
+.event-timeline-container {
+    background: linear-gradient(to bottom, #0c0f1d, #000000); 
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.upper {
+    flex: 1;
+}
+
+.event-timeline-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.event-timeline-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #00D4FF, #FFFFFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    position: relative;
+}
+.event-timeline-title::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px; 
+    background: linear-gradient(to right, 
+        transparent, 
+        #00D4FF 40%, 
+        #00D4FF 60%, 
+        transparent);
+  
+}
+
+.event-timeline-title2 {
+    color: #00c8ff;
+    margin-bottom: 0;
+}
+
+
+.event-timeline-subtitle {
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: rgba(0, 200, 255, 0.8);
+}
+
+.event-timeline-content {
+    display: flex;
+    padding: 2rem;
+    justify-content: space-around;
+}
+
+.event-timeline-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.event-timeline-image-container{
+    flex: 1;
+    display: flex;
+    justify-content: right;
+    align-items: start;
+}
+
+.event-timeline-image {
+    max-width: 100%;
+    height: auto;
+    filter: brightness(90%) contrast(110%);
+    mix-blend-mode: screen; 
+}
+
+.event-timeline-events {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 70vh; 
+    overflow-y: auto;
+    scrollbar-width: none; 
+}
+
+.event-timeline-item {
+    margin-bottom: 12px;
+    width: 65%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.event-timeline-item:last-child .event-timeline-indicator::after {
+    display: none;
+}
+
+/* Indicator Circle */
+.event-timeline-indicator {
+    margin-right: 1.5rem;
+    position: relative;
+}
+
+.event-timeline-indicator::after {
+    content: "";
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    width: 2px;
+    height: calc(100% + 2.5rem);
+    background-color: rgba(0, 200, 255, 0.3);
+    z-index: -1;
+}
+
+.event-timeline-circle {
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.event-timeline-details {
+    flex-grow: 1;
+}
+
+.event-timeline-description {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    border-left: #FFFFFF 2px solid;
+    padding-left: 0.4rem;
+}
+
+.event-timeline-date {
+    min-width: 100px;
+    text-align: right;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 1024px) {
+    /* Adjust title size */
+    .event-timeline-title {
+        font-size: 2.5rem; /* Scales appropriately between desktop and mobile */
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+
+    /* Center align content */
+    .event-timeline-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: auto;
+        margin: auto;
+    }
+
+    /* Center the image if shown */
+    .event-timeline-image-container {
+        justify-content: center;
+    }
+
+    /* Event list adjustments */
+    .event-timeline-events {
+        max-height: 60vh;
+        width: 100%;
+    }
+
+    /* Adjust individual timeline items */
+    .event-timeline-item {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 0.5rem; /* Adjust padding */
+    }
+
+    /* Reduce font sizes for better readability */
+    .event-timeline-title2 {
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .event-timeline-description {
+        font-size: 0.8rem;
+        text-align: start;
+        margin-left: 0.2rem;
+    }
+
+    .event-timeline-date {
+        font-size: 0.8rem;
+    }
+
+    /* Adjust indicator image size */
+    .event-timeline-circle {
+        width: 4rem; /* Adjusted size for medium screens */
+        height: 4rem;
+    }
+
+    /* Hide the event timeline image and subtitle */
+    .event-timeline-image-container,
+    .event-timeline-subtitle {
+        display: none;
+    }
+
+    /* Adjust event details container width */
+    .event-timeline-details {
+        width: 100%;
+    }
+
+    /* Adjust overall container padding */
+    .event-timeline-container {
+        padding: 0.5rem;
+    }
+}
+
+
+/* @media (max-width: 768px) {
+    .event-timeline-image-container {
+        display: none;
+      }
+    .event-timeline-title {
+        font-size: 36px;
+    }
+    .event-timeline-subtitle {
+        font-size: 1rem;
+    }
+    .event-timeline-item {
+        width: 80%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .event-timeline-date {
+        text-align: center;
+        min-width: auto;
+    }
+} */
+
+@media screen and (max-width: 768px) {
+    /* Hide the event timeline image */
+    .event-timeline-content{
+        padding: auto;
+        margin: auto;
+    }
+    .event-timeline-container{
+        padding: 0.1rem;
+    }
+    .event-timeline-image-container, .event-timeline-subtitle {
+      display: none;
+    }
+    .event-timeline-title {
+        margin-top: 2rem;
+        font-size: 1.5rem;
+        margin-bottom: 0;
+      }
+    
+    
+    
+      .event-timeline-item {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+      }
+    /* Make the event list take full width */
+    .event-timeline-events {
+      width: 100%;
+    }
+  .event-timeline-details{
+    width: 10%;
+  }
+    /* Reduce font size for better readability */
+    .event-timeline-title2 {
+        text-align: left;
+      font-size: 0.9rem; /* Adjust title size */
+    }
+    .event-timeline-item {
+        padding: 0.5rem; /* Adjust padding */
+      }
+    .event-timeline-description {
+      font-size: 0.6rem; /* Adjust description text */
+      text-align: start;
+      margin-left: 0.2rem;
+    }
+  
+    .event-timeline-date {
+      font-size: 0.6rem; /* Adjust date text */
+    }
+  
+    /* Adjust indicator image size */
+    .event-timeline-circle {
+      width: 4rem; /* Reduce image size */
+      height: 4rem;
+    }
+  
+    /* Adjust event item spacing */
+    
+  }
+  
