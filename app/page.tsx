@@ -8,7 +8,7 @@ import OurSpeakers from "@/components/OurSpeakers";
 import FAQSection from "@/components/Faq";
 import MainTracks from "@/components/MainTrack";
 import SponserTrackCarousel from "@/components/SponserTrack";
-import Footer from "@/components/Footer.jsx";
+import Footer from "@/components/Footer";
 
 
 export default function Home() {
