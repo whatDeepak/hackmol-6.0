@@ -10,7 +10,6 @@ import MainTracks from "@/components/MainTrack";
 import SponserTrackCarousel from "@/components/SponserTrack";
 import Footer from "@/components/Footer";
 
-
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const parallaxRef = useRef<HTMLDivElement>(null);
