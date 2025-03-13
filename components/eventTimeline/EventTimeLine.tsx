@@ -83,11 +83,11 @@ const EventTimeline: React.FC<EventTimelineProps> = ({
   subtitle = "YOUR GUIDE TO HACKMOL 6.0",
 }) => {
   return (
-    <div className="event-timeline-container">
+    <div className="event-timeline-container font-custom">
       <div className="upper">
         <div className="event-timeline-header">
-          <h1 className="event-timeline-title">
-            <span className="event-title-highlight">Event</span> Timeline
+          <h1 className="event-timeline-title text-5xl">
+            <span className="event-title-highlight ">Event</span> Timeline
           </h1>
           <h3 className="event-timeline-subtitle">{subtitle}</h3>
         </div>
@@ -98,7 +98,7 @@ const EventTimeline: React.FC<EventTimelineProps> = ({
           <Image src={bg} alt="Event" className="event-timeline-image" />
         </div>
 
-        <div className="event-timeline-events">
+        <div className="event-timeline-events h-full">
           {events.map((event) => (
             <div className="event-timeline-item" key={event.id}>
               <div className="event-timeline-indicator">

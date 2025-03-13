@@ -10,6 +10,7 @@ import MainTracks from "@/components/MainTrack";
 import SponserTrackCarousel from "@/components/SponserTrack";
 import Footer from "@/components/Footer";
 import PrizesSection from "@/components/Prize_Section/PrizesSection";
+import EventTimeline from "@/components/eventTimeline/EventTimeLine";
 
 
 export default function Home() {
@@ -409,6 +410,7 @@ export default function Home() {
       </main>
       <AboutUs
       ></AboutUs>
+      <EventTimeline events={[]}/>
       <MainTracks/>
       <SponserTrackCarousel/>
       <PrizesSection/>
