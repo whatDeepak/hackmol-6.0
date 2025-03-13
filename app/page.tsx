@@ -9,6 +9,7 @@ import FAQSection from "@/components/Faq";
 import MainTracks from "@/components/MainTrack";
 import SponserTrackCarousel from "@/components/SponserTrack";
 
+
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const parallaxRef = useRef<HTMLDivElement>(null);
@@ -410,6 +411,7 @@ export default function Home() {
       <SponserTrackCarousel/>
       <OurSpeakers></OurSpeakers>
       <FAQSection />
+      <Footer/>
     </>
   );
 }
