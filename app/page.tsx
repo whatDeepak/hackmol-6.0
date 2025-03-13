@@ -6,6 +6,7 @@ import { Meteors } from "@/components/magicui/meteors";
 import AboutUs from "@/components/About";
 import OurSpeakers from "@/components/OurSpeakers";
 import FAQSection from "@/components/Faq";
+import PrizesSection from '@/components/Prize_Section/PrizesSection';
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -404,6 +405,7 @@ export default function Home() {
         aboutUsSmallStars={aboutUsSmallStars}
         aboutUsBigStars={aboutUsBigStars}
       ></AboutUs>
+      <PrizesSection />
       <OurSpeakers></OurSpeakers>
       <FAQSection />
     </>
