@@ -125,7 +125,7 @@ const SpeakersSection: React.FC = () => {
         className="absolute inset-0 z-0"
         style={{
           background:
-            "radial-gradient(circle, #0c1930 0%)",//add more colours if you want
+            "radial-gradient(circle, #0c1930 0%,#0c1930 50%,#0c1930 100%)",//add more colours if you want
         }}
       ></div>{" "}
       {/* Spotlight effect */}
