@@ -115,7 +115,7 @@ function CardPattern({
   mouseY: any;
   text: string;
 }) {
-  let maskImage = useMotionTemplate`radial-gradient(250px at ${mouseX}px ${mouseY}px, white, transparent)`;
+  let maskImage = useMotionTemplate`radial-gradient(200px at ${mouseX}px ${mouseY}px, white, transparent)`;
   let style = { maskImage, WebkitMaskImage: maskImage };
 
   return (

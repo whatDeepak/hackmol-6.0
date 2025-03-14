@@ -36,7 +36,7 @@ const TabSwitcher = ({
           key={tab}
           onClick={() => setActiveTab(tab)}
           className={cn(
-            "py-2 px-3 sm:py-3 sm:px-8 text-sm sm:text-base rounded-full border border-cyan-500 font-custom transition-colors w-full sm:w-auto",
+            "py-2 px-3 sm:py-3 sm:px-8 text-sm sm:text-base rounded-full border border-cyan-500 font-custom transition-colors w-full sm:w-auto select-none",
             activeTab === tab
               ? "bg-white text-[#0c1930] font-semibold"
               : "bg-transparent text-white hover:bg-cyan-950/30"
@@ -129,7 +129,7 @@ const FAQSection = () => {
     <div className="relative min-h-screen w-full bg-[#0c1930] text-white py-10 sm:py-16 px-4 md:px-8">
       <div className="relative z-10 max-w-4xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col items-center justify-center mb-8 sm:mb-16">
+        <div className="flex flex-col items-center justify-center mb-8 sm:mb-16 select-none">
           <div className="flex items-center justify-center mb-2 relative">
             <motion.h2
               className="text-3xl sm:text-4xl md:text-6xl font-custom text-center"
