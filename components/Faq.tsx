@@ -30,13 +30,13 @@ const TabSwitcher = ({
   const tabs: TabType[] = ["GENERAL", "REGISTER", "PAY", "EXPENSE"];
 
   return (
-    <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8">
+    <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 sm:gap-4 mb-8">
       {tabs.map((tab) => (
         <button
           key={tab}
           onClick={() => setActiveTab(tab)}
           className={cn(
-            "py-2 px-3 sm:py-3 sm:px-8 text-sm sm:text-base rounded-full border border-cyan-500 font-custom transition-colors",
+            "py-2 px-3 sm:py-3 sm:px-8 text-sm sm:text-base rounded-full border border-cyan-500 font-custom transition-colors w-full sm:w-auto",
             activeTab === tab
               ? "bg-white text-[#0c1930] font-semibold"
               : "bg-transparent text-white hover:bg-cyan-950/30"
@@ -158,17 +158,17 @@ const FAQSection = () => {
               value={`item-${index}`}
               className="border-b-[3px] border-white pt-2"
             >
-              <AccordionTrigger className="flex items-center py-4 sm:py-5 text-base sm:text-xl font-custom pr-2">
-                <span className=" mr-2 sm:mr-3 flex-shrink-0 flex items-center justify-center gap-5 text-white">
+              <AccordionTrigger className="flex items-start text-left py-4 sm:py-5 text-base sm:text-xl font-custom pr-2 w-full">
+                <div className="flex items-start gap-2 sm:gap-3 w-full">
                   <img
                     src="/icons/faq.png"
                     alt="FAQ Icon"
-                    className="h-6 sm:h-8"
+                    className="h-6 sm:h-8 mt-1 flex-shrink-0"
                   />
-                <span className="pt-2">{faq.question}</span>
-                </span>
+                  <span className="pt-1 break-words">{faq.question}</span>
+                </div>
               </AccordionTrigger>
-              <AccordionContent className="text-gray-300 pl-6 sm:pl-12 pr-2 sm:pr-4 py-3 sm:py-4 text-sm sm:text-base ">
+              <AccordionContent className="text-gray-300 pl-8 sm:pl-12 pr-2 sm:pr-4 py-3 sm:py-4 text-sm sm:text-base">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

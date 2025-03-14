@@ -48,7 +48,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, className }) => {
   return (
     <motion.div
       className={cn(
-        "w-3/4 aspect-[3/4] relative rounded-2xl overflow-hidden group border-[#5CE5FA] border-2",
+        "md:w-5/6 w-3/4 sm:w-full aspect-[3/4] relative rounded-2xl overflow-hidden group border-[#5CE5FA] border-2",
         className
       )}
       initial={{ opacity: 0, y: 20 }}
@@ -69,14 +69,10 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, className }) => {
       </div>
 
       {/* Hover effect - moved outside to cover the entire card including details */}
-      <CardPattern 
-        mouseX={mouseX} 
-        mouseY={mouseY} 
-        text={dynamicText}
-      />
+      <CardPattern mouseX={mouseX} mouseY={mouseY} text={dynamicText} />
 
-      {/* Card details overlay at the bottom */}
-      <div className="absolute bottom-0 left-0 right-0 bg-[#5ce5fa]/10 p-4 text-[#5CE5FA] flex items-center justify-between border-t-2 border-[#5CE5FA] font-custom overflow-hidden hover:bg-cyan-950/50 transition duration-500">
+      {/* Card details overlay at the bottom - responsive for different screen sizes */}
+      <div className="absolute bottom-0 left-0 right-0 bg-[#5ce5fa]/10 p-2 sm:p-3 md:p-4 text-[#5CE5FA] flex items-center justify-between border-t-2 border-[#5CE5FA] font-custom overflow-hidden hover:bg-cyan-950/50 transition duration-500">
         <div className="absolute left-20 right-20 h-1/2 top-0 bg-slate-950 blur-2xl"></div>
         {speaker.socials.twitter && (
           <Link
@@ -84,12 +80,14 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, className }) => {
             passHref
             className="text-[#5CE5FA] hover:text-white transition-colors z-30 relative"
           >
-            <Twitter size={20} />
+            <Twitter size={16} className="sm:w-5 sm:h-5 md:w-5 md:h-5" />
           </Link>
         )}
-        <div className="z-30 relative">
-          <h3 className="text-center text-2xl font-custom">{speaker.name}</h3>
-          <p className="text-center text-sm text-white">
+        <div className="z-30 relative px-1">
+          <h3 className="text-center text-lg sm:text-xl md:text-2xl font-custom truncate">
+            {speaker.name}
+          </h3>
+          <p className="text-center text-xs sm:text-sm text-white truncate">
             {speaker.role} @ {speaker.company}
           </p>
         </div>
@@ -99,7 +97,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, className }) => {
             passHref
             className="text-[#5CE5FA] hover:text-white transition-colors z-30 relative"
           >
-            <Linkedin size={20} />
+            <Linkedin size={16} className="sm:w-5 sm:h-5 md:w-5 md:h-5" />
           </Link>
         )}
       </div>
@@ -108,7 +106,15 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, className }) => {
 };
 
 // Card pattern component for the hover effect
-function CardPattern({ mouseX, mouseY, text }: { mouseX: any; mouseY: any; text: string }) {
+function CardPattern({
+  mouseX,
+  mouseY,
+  text,
+}: {
+  mouseX: any;
+  mouseY: any;
+  text: string;
+}) {
   let maskImage = useMotionTemplate`radial-gradient(250px at ${mouseX}px ${mouseY}px, white, transparent)`;
   let style = { maskImage, WebkitMaskImage: maskImage };
 
@@ -135,23 +141,17 @@ function CardPattern({ mouseX, mouseY, text }: { mouseX: any; mouseY: any; text:
 const generateHackathonText = (length: number) => {
   const hackathonText = "IOTAxGDGCxHackMol6.0";
   let result = "";
-  
+
   while (result.length < length) {
     // Add the hackathon text
     result += hackathonText;
-    
+
     // Add some noise/variation every few characters
-    if (Math.random() > 0.7) {
+    if (Math.random() > 0.9) {
       result += "sIuOmTiAt";
     }
-    
-    // Occasionally add some special characters for more noise
-    if (Math.random() > 0.9) {
-      const noiseChars = "sumit";
-      result += noiseChars.charAt(Math.floor(Math.random() * noiseChars.length));
-    }
   }
-  
+
   return result.substring(0, length);
 };
 
