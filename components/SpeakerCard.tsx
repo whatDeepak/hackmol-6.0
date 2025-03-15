@@ -41,8 +41,8 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, className }) => {
     mouseY.set(clientY - top);
 
     // Change text on mouse move
-    // const text = generateHackathonText(1500);
-    // setDynamicText(text);
+    const text = generateHackathonText(1500);
+    setDynamicText(text);
   }
 
   return (
@@ -151,8 +151,8 @@ const generateHackathonText = (length: number) => {
     result += hackathonText;
 
     // Add some noise/variation every few characters
-    if (Math.random() > 0.8) {
-      result += "_sIuOmTiAt_";
+    if (Math.random() > 0.7) {
+      result += "sIuOmTiAt";
     }
   }
 

@@ -126,7 +126,7 @@ const FAQSection = () => {
   const [activeTab, setActiveTab] = useState<TabType>("GENERAL");
 
   return (
-    <div className="relative min-h-screen w-full bg-[#0c1930] text-white py-10 sm:py-16 px-4 md:px-8">
+    <div className="relative min-h-screen w-full bg-[#0c1930] text-white py-10 sm:py-16 px-4 md:px-8" id="faq">
       <div className="relative z-10 max-w-4xl mx-auto">
         <div className="flex flex-col items-center justify-center mb-8 sm:mb-16 select-none">
           <div className="flex items-center justify-center mb-1 relative">

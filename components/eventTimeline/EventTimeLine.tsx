@@ -57,7 +57,7 @@ const events = [
 
 const EventTimeline: React.FC<EventTimelineProps> = () => {
   return (
-    <div className="event-timeline-container font-custom bg-gradient-to-b from-[#0f1524] via-[#000] to-slate-950">
+    <div className="event-timeline-container font-custom bg-gradient-to-b from-[#0f1524] via-[#000] to-slate-950" id="schedule">
       <div className="upper">
         <div className="event-timeline-header">
           <h1 className="event-timeline-title text-5xl md:text-6xl">

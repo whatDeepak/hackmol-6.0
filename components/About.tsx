@@ -77,6 +77,7 @@ export default function AboutUs() {
       className={cn(
         "min-h-screen bg-[#0f1524] py-20 text-white overflow-hidden relative "
       )}
+      id="about"
     >
       {/* Background dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

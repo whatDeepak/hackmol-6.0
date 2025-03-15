@@ -11,11 +11,11 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Schedule", href: "/schedule" },
-  { label: "Prizes", href: "/prizes" },
-  { label: "Rules", href: "/rules" },
-  { label: "Tracks", href: "/tracks" },
-  { label: "FAQ", href: "/faq" },
+  { label: "About", href: "#about" },
+  { label: "Schedule", href: "#schedule" },
+  { label: "Tracks", href: "#tracks" },
+  { label: "Speakers", href: "#speakers" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 const Navbar = () => {
@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-sm border-b border-slate-800">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 font-sans">
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
@@ -48,19 +48,11 @@ const Navbar = () => {
           {/* Register Button */}
           <div className="hidden md:block">
             <Link href="/register" className="relative group">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-full h-full border border-transparent relative">
-                  {/* Top-left corner */}
-                  <div className="absolute top-1 left-1 w-6 h-4 border-t-2 border-l-2 border-cyan-400 rounded-tl-md transition-all duration-300 group-hover:top-0 group-hover:left-0 group-hover:w-7 group-hover:h-5"></div>
-                  {/* Top-right corner */}
-                  <div className="absolute top-1 right-1 w-6 h-4 border-t-2 border-r-2 border-cyan-400 rounded-tr-md transition-all duration-300 group-hover:top-0 group-hover:right-0 group-hover:w-7 group-hover:h-5"></div>
-                  {/* Bottom-left corner */}
-                  <div className="absolute bottom-1 left-1 w-6 h-4 border-b-2 border-l-2 border-cyan-400 rounded-bl-md transition-all duration-300 group-hover:bottom-0 group-hover:left-0 group-hover:w-7 group-hover:h-5"></div>
-                  {/* Bottom-right corner */}
-                  <div className="absolute bottom-1 right-1 w-6 h-4 border-b-2 border-r-2 border-cyan-400 rounded-br-md transition-all duration-300 group-hover:bottom-0 group-hover:right-0 group-hover:w-7 group-hover:h-5"></div>
-                </div>
-              </div>
-              <div className=" transition-colors duration-200 px-8 py-3 text-white text-lg font-medium relative">
+              <div className="transition-colors duration-200 px-8 py-3 text-white text-lg font-medium relative">
+                  <div className="absolute top-1 left-1 w-6 h-4 border-t-2 border-l-2 border-cyan-400 rounded-tl-sm transition-all ease-in duration-100 group-hover:top-2 group-hover:left-2 group-hover:w-5 group-hover:h-4"></div>
+                  <div className="absolute top-1 right-1 w-6 h-4 border-t-2 border-r-2 border-cyan-400 rounded-tr-sm transition-all ease-in duration-100 group-hover:top-2 group-hover:right-2 group-hover:w-5 group-hover:h-4"></div>
+                  <div className="absolute bottom-1 left-1 w-6 h-4 border-b-2 border-l-2 border-cyan-400 rounded-bl-sm transition-all ease-in duration-100 group-hover:bottom-2 group-hover:left-2 group-hover:w-5 group-hover:h-4"></div>
+                  <div className="absolute bottom-1 right-1 w-6 h-4 border-b-2 border-r-2 border-cyan-400 rounded-br-sm transition-all ease-in duration-100 group-hover:bottom-2 group-hover:right-2 group-hover:w-5 group-hover:h-4"></div>
                 Register
               </div>
             </Link>

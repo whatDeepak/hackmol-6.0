@@ -11,11 +11,9 @@ import Star from "./svg/Star";
 import Toy from "./svg/Toy";
 import WomenHeader from "./svg/WomenHeader";
 
-import { motion } from "framer-motion";
-
 export default function MainTracks() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white p-6 relative">
+    <div className="min-h-screen bg-slate-950 text-white p-6 relative" id="tracks">
       
       <div className="max-w-7xl mx-auto">
         <header className="mb-12 text-center">

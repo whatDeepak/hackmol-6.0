@@ -104,6 +104,7 @@ const SpeakersSection: React.FC = () => {
 
   return (
     <div
+      id="speakers"
       className="min-h-screen relative bg-black py-16 px-4 flex flex-col items-center overflow-hidden select-none"
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
