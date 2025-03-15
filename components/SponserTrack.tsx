@@ -157,45 +157,16 @@ export default function SponserTrackCarousel() {
           ))}
         </div>
 
-        {/* Header with animation */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <motion.h1
-            className="text-5xl font-bold mb-2 font-custom"
-            animate={{
-              textShadow: [
-                "0 0 0px #00e5ff",
-                "0 0 8px #00e5ff",
-                "0 0 0px #00e5ff",
-              ],
-            }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <span className="text-[#00e5ff]">Sponser</span>{" "}
-            <span className="text-white">Tracks</span>
-          </motion.h1>
-
-          <motion.div
-            className="h-0.5 max-w-xl bg-gradient-to-r from-transparent via-[#0ce3ff] to-transparent mx-auto mb-2"
-            animate={{
-              scaleX: [0.6, 1, 0.6],
-              opacity: [0.5, 1, 0.5],
-            }}
-            transition={{ duration: 3, repeat: Infinity }}
-          ></motion.div>
-
-          <motion.p
-            className="text-[#00e5ff] text-lg tracking-wider"
-            animate={{ opacity: [0.7, 1, 0.7] }}
-            transition={{ duration: 3, repeat: Infinity }}
-          >
-            YOUR GUIDE TO HACKMOL 6.0
-          </motion.p>
-        </motion.div>
+        {/* Header withOUT animation */}
+        <div className="text-center mb-16">
+          <h1 className="text-5xl md:text-6xl font-bold mb-2 event-timeline-title font-custom">
+            Event Sponsors
+          </h1>
+          <div className="h-0.5 max-w-xl bg-gradient-to-r from-transparent via-[#0ce3ff] to-transparent mx-auto mb-2"></div>
+          <p className="text-[#0ce3ff] text-lg tracking-wider font-sans uppercase">
+          The Gods Who Fuel the Battle
+          </p>
+        </div>
 
         {/* Carousel Navigation */}
         <motion.button

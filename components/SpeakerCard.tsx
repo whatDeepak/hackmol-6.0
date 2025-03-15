@@ -4,7 +4,7 @@ import { useMotionValue, useMotionTemplate, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import { Twitter, Linkedin } from "lucide-react";
+import { Linkedin, Instagram } from "lucide-react";
 
 // Speaker interface
 interface Speaker {
@@ -41,8 +41,8 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, className }) => {
     mouseY.set(clientY - top);
 
     // Change text on mouse move
-    const text = generateHackathonText(1500);
-    setDynamicText(text);
+    // const text = generateHackathonText(1500);
+    // setDynamicText(text);
   }
 
   return (
@@ -72,7 +72,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, className }) => {
       <CardPattern mouseX={mouseX} mouseY={mouseY} text={dynamicText} />
 
       {/* Card details overlay at the bottom - responsive for different screen sizes */}
-      <div className="absolute bottom-0 left-0 right-0 bg-[#5ce5fa]/10 p-2 sm:p-3 md:p-4 text-[#5CE5FA] flex items-center justify-between border-t-2 border-[#5CE5FA] font-custom overflow-hidden hover:bg-cyan-950/50 transition duration-500">
+      <div className="absolute bottom-0 left-0 right-0 bg-[#000]/50 p-2 sm:p-3 md:p-4 text-[#5CE5FA] flex items-center justify-between border-t-2 border-[#5CE5FA] font-custom overflow-hidden hover:bg-cyan-950/50 transition duration-500">
         <div className="absolute left-20 right-20 h-1/2 top-0 bg-slate-950 blur-2xl"></div>
         {speaker.socials.twitter && (
           <Link
@@ -80,7 +80,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, className }) => {
             passHref
             className="text-[#5CE5FA] hover:text-white transition-colors z-30 relative"
           >
-            <Twitter size={16} className="sm:w-5 sm:h-5 md:w-5 md:h-5" />
+            <Instagram size={16} className="sm:w-5 sm:h-5 md:w-5 md:h-5" />
           </Link>
         )}
         <div className="z-30 relative px-1">
@@ -88,8 +88,12 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, className }) => {
             {speaker.name}
           </h3>
           <p className="text-center text-xs sm:text-sm text-white truncate">
-            {speaker.role} @ {speaker.company}
+            {speaker.role}
           </p>
+          <p className="text-center text-xs sm:text-sm text-white truncate">
+            @ {speaker.company}
+          </p>
+          
         </div>
         {speaker.socials.linkedin && (
           <Link
@@ -147,8 +151,8 @@ const generateHackathonText = (length: number) => {
     result += hackathonText;
 
     // Add some noise/variation every few characters
-    if (Math.random() > 0.9) {
-      result += "sIuOmTiAt";
+    if (Math.random() > 0.8) {
+      result += "_sIuOmTiAt_";
     }
   }
 

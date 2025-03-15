@@ -68,49 +68,38 @@ const SpeakersSection: React.FC = () => {
   const speakers: Speaker[] = [
     {
       id: 1,
-      name: "ABC DEF",
-      role: "Software Dev",
-      company: "ABC",
-      image: "/speakers/speaker1.jpg",
+      name: "Umang",
+      role: "Developer and Maintainer",
+      company: "zop.dev",
+      image: "/speakers/sp1.jpeg",
       socials: {
-        twitter: "https://twitter.com/abcdef",
-        linkedin: "https://linkedin.com/in/abcdef",
+        twitter: "https://www.instagram.com/umang_iam/",
+        linkedin: "https://www.linkedin.com/in/umang01-hash/",
       },
     },
     {
+
       id: 2,
-      name: "ABC DEF",
-      role: "Software Dev",
-      company: "ABC",
-      image: "/speakers/speaker1.jpg",
+      name: "Ankita",
+      role: "Software Developer",
+      company: "Pocket FM",
+      image: "/speakers/sp2.jpeg",
       socials: {
-        twitter: "https://twitter.com/abcdef",
-        linkedin: "https://linkedin.com/in/abcdef",
+        twitter: "https://www.instagram.com/ankitach_23/",
+        linkedin: "https://www.linkedin.com/in/ankita-chaudhary-9a55201bb/",
       },
     },
     {
       id: 3,
-      name: "ABC DEF",
-      role: "Software Dev",
-      company: "ABC",
-      image: "/speakers/speaker1.jpg",
+      name: "Yajur",
+      role: "Product Manager",
+      company: "Builder.ai",
+      image: "/speakers/sp3.jpeg",
       socials: {
-        twitter: "https://twitter.com/abcdef",
-        linkedin: "https://linkedin.com/in/abcdef",
+        twitter: "https://www.instagram.com/yajurbajaj01/",
+        linkedin: "https://www.linkedin.com/in/yajurbajaj/",
       },
     },
-    {
-      id: 4,
-      name: "ABC DEF",
-      role: "Software Dev",
-      company: "ABC",
-      image: "/speakers/speaker1.jpg",
-      socials: {
-        twitter: "https://twitter.com/abcdef",
-        linkedin: "https://linkedin.com/in/abcdef",
-      },
-    },
-    // Add more speakers as needed
   ];
 
   return (
@@ -122,40 +111,8 @@ const SpeakersSection: React.FC = () => {
     >
       {/* Background base add radial gradient if you want*/}
       <div
-        className="absolute inset-0 z-0"
-        style={{
-          background:
-            "radial-gradient(circle, #0c1930 0%,#0c1930 50%,#0c1930 100%)",//add more colours if you want
-        }}
-      ></div>{" "}
-      {/* Spotlight effect */}
-      <motion.div
-        className="pointer-events-none absolute z-10 inset-0 opacity-0 transition duration-300"
-        style={{
-          backgroundColor: "#5CE5FA10",
-          maskImage: useMotionTemplate`
-            radial-gradient(
-              350px circle at ${mouseX}px ${mouseY}px,
-              white,
-              transparent 70%
-            )
-          `,
-          opacity: isHovering ? 1 : 0,
-        }}
-      >
-        {isHovering && (
-          <CanvasRevealEffect
-            animationSpeed={2}
-            containerClassName="bg-transparent absolute inset-0 pointer-events-none"
-            colors={[
-              [92, 229, 250], // #5CE5FA - Light blue accent
-              [34, 205, 250], // #22CDFA - Cyan accent
-            ]}
-            dotSize={2}
-            showGradient={false}
-          />
-        )}
-      </motion.div>
+        className="absolute inset-0 z-0 bg-gradient-to-b from-slate-800 via-[#0c1930] to-[#0c1930]"
+      ></div>
       {/* Content - increased z-index to appear above the spotlight effect */}
       <div className="z-20 relative w-full flex flex-col items-center">
         {/* Header with crossed axes decorations */}
@@ -166,19 +123,14 @@ const SpeakersSection: React.FC = () => {
               alt="Crossed axes"
               width={96}
               height={96}
-              className="h-16 w-16 md:w-24 md:h-24"
+              className="h-16 w-16 md:w-24 md:h-24 -scale-x-100"
             />
-            <motion.h2
-              className="text-4xl sm:text-5xl md:text-6xl font-custom flex-col justify-center items-center block"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <center className="text-white">
-                Our <span className="text-[#5CE5FA]">Speakers</span>
+            <h2 className="text-5xl md:text-6xl font-custom flex-col justify-center items-center block">
+              <center className="text-white event-timeline-title">
+                Our Speakers
               </center>
               <div className="h-0.5 w-52 md:w-auto md:max-w-xl bg-gradient-to-r from-transparent via-[#0ce3ff] to-transparent mx-auto"></div>
-            </motion.h2>
+            </h2>
             <Image
               src="/axes.png"
               alt="Crossed axes"
@@ -187,8 +139,8 @@ const SpeakersSection: React.FC = () => {
               className="h-16 w-16 md:w-24 md:h-24"
             />
           </div>
-          <p className="text-[#0ce3ff] text-md xs:text-lg tracking-wider">
-            Meet Speakers for Hackmol 6.0
+          <p className="text-[#0ce3ff] text-lg tracking-wider font-sans uppercase">
+          Keepers of Knowledge
           </p>
         </div>
 

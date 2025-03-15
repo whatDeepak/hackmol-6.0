@@ -128,22 +128,15 @@ const FAQSection = () => {
   return (
     <div className="relative min-h-screen w-full bg-[#0c1930] text-white py-10 sm:py-16 px-4 md:px-8">
       <div className="relative z-10 max-w-4xl mx-auto">
-        {/* Header */}
         <div className="flex flex-col items-center justify-center mb-8 sm:mb-16 select-none">
-          <div className="flex items-center justify-center mb-2 relative">
-            <motion.h2
-              className="text-3xl sm:text-4xl md:text-6xl font-custom text-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <span className="text-[#5CE5FA]">Frequently asked</span>{" "}
-              <span className="text-white">questions</span>
+          <div className="flex items-center justify-center mb-1 relative">
+            <h2 className="text-4xl md:text-5xl font-bold font-custom w-full">
+              <span className="event-timeline-title">Frequently asked questions</span>
               <div className="h-0.5 max-w-xl bg-gradient-to-r from-transparent via-[#0ce3ff] to-transparent mx-auto mb-2"></div>
-            </motion.h2>
+            </h2>
           </div>
-          <p className="text-[#0ce3ff] text-sm sm:text-lg tracking-wider uppercase text-center">
-            Your guide to Hackmol 6.0
+          <p className="text-[#0ce3ff] text-lg tracking-wider font-sans uppercase">
+            Your Quest for Answers Ends Here
           </p>
         </div>
 
@@ -168,7 +161,7 @@ const FAQSection = () => {
                   <span className="pt-1 break-words">{faq.question}</span>
                 </div>
               </AccordionTrigger>
-              <AccordionContent className="text-gray-300 pl-8 sm:pl-12 pr-2 sm:pr-4 py-3 sm:py-4 text-sm sm:text-base">
+              <AccordionContent className="text-gray-300 pl-8 sm:pl-12 pr-2 sm:pr-4 py-3 sm:py-4 text-sm sm:text-base font-sans">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

@@ -11,17 +11,19 @@ import Star from "./svg/Star";
 import Toy from "./svg/Toy";
 import WomenHeader from "./svg/WomenHeader";
 
+import { motion } from "framer-motion";
+
 export default function MainTracks() {
   return (
     <div className="min-h-screen bg-slate-950 text-white p-6 relative">
       
       <div className="max-w-7xl mx-auto">
         <header className="mb-12 text-center">
-          <h1 className="text-5xl font-bold mb-1 font-custom ">
+          <h1 className="text-5xl md:text-6xl font-bold mb-1 font-custom ">
             <span className="event-timeline-title">Main Tracks</span>
+            <div className="h-0.5 max-w-lg bg-gradient-to-r from-transparent via-[#0ce3ff] to-transparent mx-auto mb-2"></div>
           </h1>
-          <div className="h-0.5 max-w-lg bg-gradient-to-r from-transparent via-[#0ce3ff] to-transparent mx-auto mb-2"></div>
-          <p className="text-[#0cf] uppercase tracking-wider text-sm font-sans">
+          <p className="text-[#0ce3ff] text-lg tracking-wider font-sans uppercase">
           Trials of the Worthy
           </p>
         </header>
@@ -36,32 +38,32 @@ export default function MainTracks() {
                   "linear-gradient(to right, #FFDA69 0%, #F1BE22 0%, #FADB7E 23%, #E9CD79 51%, #FBE08D 77%, #F4CD57 98%)",
               }}
             >
-              <div className="relative z-20 h-[48px] flex items-center justify-center">
+              <div className="relative z-20 h-[48px] flex items-center justify-center font-custom">
                 MAIN TRACK
               </div>
               <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-10">
                 <SvgMainTrackBackground />
               </div>
             </div>
-            <div className="relative p-6 text-black bg-transparent z-50 grid md:grid-cols-2">
+            <div className="relative p-6 text-black bg-transparent z-50 grid md:grid-cols-2 font-custom">
               <div>
-                <div className="mb-4 prize-item transform transition-all duration-300">
-                  <div className="font-bold text-lg">WINNER</div>
-                  <div className="flex items-center gap-2 animate-shimmer">
+                <div className="mb-4">
+                  <div className="font-bold text-lg">Winner</div>
+                  <div className="flex items-center gap-2 font-sans font-normal">
                     <Li />
                     50,000
                   </div>
                 </div>
-                <div className="mb-4 prize-item transform transition-all duration-300">
-                  <div className="font-bold text-lg">1ST RUNNER UP</div>
-                  <div className="flex items-center gap-2">
+                <div className="mb-4">
+                  <div className="font-bold text-lg">1st Runer Up</div>
+                  <div className="flex items-center gap-2 font-sans font-normal">
                     <Li />
                     30,000
                   </div>
                 </div>
-                <div className="mb-4 prize-item transform transition-all duration-300">
-                  <div className="font-bold text-lg">2ND RUNNER UP</div>
-                  <div className="flex items-center gap-2">
+                <div className="mb-4">
+                  <div className="font-bold text-lg">2nd Runner Up</div>
+                  <div className="flex items-center gap-2 font-sans font-normal">
                     <Li />
                     30,000
                   </div>
@@ -71,24 +73,23 @@ export default function MainTracks() {
                 </div>
               </div>
               <div>
-                <div className="font-bold text-lg mb-2 animate-bounce-subtle">
-                  ODIN'S BLESSINGS
+                <div className="font-bold text-lg mb-2">
+                  Odin's Blessings
                 </div>
 
-                <ul className="list-none">
+                <ul className="list-none font-sans font-normal">
                   {[
-                    "Partner Tshirts",
-                    "This And That And This",
-                    "What Else Would U",
-                    "Have Is Yours",
-                    "Halu Halu Halu Halu",
-                    "Bhalu Bhalu Bhalu",
-                    "Gdsc Nhi GDG Hai Bhaiya",
+                    "GDG Goodies ",
+                    "Exclusive Stickers ",
+                    "Souvenirs ",
+                    "Sponsor swags ",
+                    "Hackathon T-shirts",
+                    "Gofr Goodies ",
+                    "zop.dev credits",
                   ].map((item, index) => (
                     <li
                       key={index}
-                      className="flex items-start mb-1 animate-list-item"
-                      style={{ animationDelay: `${index * 0.1}s` }}
+                      className="flex items-start mb-1"
                     >
                       <span className="mr-2">•</span> {item}
                     </li>
@@ -120,7 +121,7 @@ export default function MainTracks() {
                     "linear-gradient(to right, #9CA3AA 0%, #D9DADB 28%, #9CA3AA 52%, #D9DADB 84%, #9CA3AA 100%)",
                 }}
               >
-                <div className="relative z-10 h-[48px] flex justify-center items-center">
+                <div className="relative z-10 h-[48px] flex justify-center items-center font-custom">
                   FRESHER'S TRACK
                 </div>
                 <div className="absolute top-[50%] left-0 transform -translate-y-1/2 overflow-hidden">
@@ -129,46 +130,42 @@ export default function MainTracks() {
               </div>
               <div className="relative p-6 text-black grid md:grid-cols-2 gap-4 border-2 border-t-black">
                 <div>
-                  {["WINNER", "1ST RUNNER UP", "2ND RUNNER UP"].map(
+                  {["Winner", "1st Runner Up", "2nd Runner Up"].map(
                     (title, index) => (
                       <div
                         key={index}
-                        className="mb-4 relative z-10 prize-item transform transition-all duration-300"
+                        className="mb-4 relative z-10"
                       >
-                        <div className="font-bold text-lg">{title}</div>
-                        <div className="flex items-center gap-2">
+                        <div className="font-bold text-lg font-custom">{title}</div>
+                        <div className="flex items-center gap-2 font-sans font-normal">
                           <Li />{" "}
-                          {index === 0
-                            ? "10,000"
-                            : index === 1
-                            ? "5000"
-                            : "3000"}
+                          {index === 0 ? "10,000"
+                            : index === 1 ? "5000" : "3000"}
                         </div>
                       </div>
                     )
                   )}
                   <div className="absolute top-[50%] left-0 transform -translate-y-[50%] -translate-x-4 overflow-hidden">
-                    <Dog2 />
+                      <Dog2 />
                   </div>
                 </div>
                 <div>
-                  <div className="font-bold text-lg mb-2 relative z-10 animate-bounce-subtle">
-                    ODIN'S BLESSINGS
+                  <div className="font-bold text-lg mb-2 relative z-10 font-custom">
+                    Odin's Blessings
                   </div>
-                  <ul className="list-none relative z-10">
-                    {[
-                      "Partner Tshirts",
-                      "This And That And This",
-                      "What Else Would U",
-                      "Have Is Yours",
-                      "Halu Halu Halu Halu",
-                      "Bhalu Bhalu Bhalu",
-                      "Gdsc Nhi GDG Hai Bhaiya",
+                  <ul className="list-none relative z-10 font-sans font-normal">
+                    {[ 
+                      "GDG Goodies ",
+                      "Exclusive Stickers ",
+                      "Souvenirs ",
+                      "Sponsor swags ",
+                      "Hackathon T-shirts",
+                      "Gofr Goodies ",
+                      "zop.dev credits",
                     ].map((item, index) => (
                       <li
                         key={index}
-                        className="flex items-start mb-1 animate-list-item"
-                        style={{ animationDelay: `${index * 0.1}s` }}
+                        className="flex items-start mb-1"
                       >
                         <span className="mr-2">•</span> {item}
                       </li>
@@ -190,7 +187,7 @@ export default function MainTracks() {
                     "linear-gradient(to right, #9015A5 0%, #BD49D0 14%, #AB45BE 36%, #9015A5 51%, #AB45BE 64%, #BD49D0 84%,#9015A5 100%)",
                 }}
               >
-                <div className="relative z-10 h-[48px] flex items-center justify-center">
+                <div className="relative z-10 h-[48px] flex items-center justify-center font-custom">
                   WOMEN'S TRACK
                 </div>
                 <div className="absolute top-[50%] left-0 transform -translate-y-1/2 overflow-hidden">
@@ -199,20 +196,17 @@ export default function MainTracks() {
               </div>
               <div className="relative p-6 text-black grid md:grid-cols-2 gap-4 z-10 border-t-2 border-black">
                 <div>
-                  {["WINNER", "1ST RUNNER UP", "2ND RUNNER UP"].map(
+                  {["Winner", "1st Runner Up", "2nd Runner Up"].map(
                     (title, index) => (
                       <div
                         key={index}
-                        className="mb-4 relative z-10 prize-item transform transition-all duration-300"
+                        className="mb-4 relative z-10"
                       >
-                        <div className="font-bold text-lg">{title}</div>
-                        <div className="flex items-center gap-2">
+                        <div className="font-bold text-lg font-custom">{title}</div>
+                        <div className="flex items-center gap-2 font-sans font-normal">
                           <Li />{" "}
-                          {index === 0
-                            ? "10,000"
-                            : index === 1
-                            ? "5000"
-                            : "3000"}
+                          {index === 0 ? "10,000" : 
+                            index === 1 ? "5000" : "3000"}
                         </div>
                       </div>
                     )
@@ -222,23 +216,22 @@ export default function MainTracks() {
                   </div>
                 </div>
                 <div>
-                  <div className="font-bold text-lg mb-2 relative z-10 animate-bounce-subtle">
-                    FREYA'S REMNANTS
+                  <div className="font-bold text-lg mb-2 relative z-10 font-custom">
+                    Freya's Remnants
                   </div>
-                  <ul className="list-item relative z-10">
+                  <ul className="list-item relative z-10 font-sans font-normal">
                     {[
-                      "Partner Tshirts",
-                      "This And That And This",
-                      "What Else Would U",
-                      "Have Is Yours",
-                      "Halu Halu Halu Halu",
-                      "Bhalu Bhalu Bhalu",
-                      "Gdsc Nhi GDG Hai Bhaiya",
+                    "GDG Goodies ",
+                    "Exclusive Stickers ",
+                    "Souvenirs ",
+                    "Sponsor swags ",
+                    "Hackathon T-shirts",
+                    "Gofr Goodies ",
+                    "zop.dev credits",
                     ].map((item, index) => (
                       <li
                         key={index}
-                        className="flex items-start mb-1 animate-list-item"
-                        style={{ animationDelay: `${index * 0.1}s` }}
+                        className="flex items-start mb-1"
                       >
                         <span className="mr-2">•</span> {item}
                       </li>

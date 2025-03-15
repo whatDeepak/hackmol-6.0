@@ -412,8 +412,8 @@ export default function Home() {
       <EventTimeline events={[]}/>
       <MainTracks/>
       <SponserTrackCarousel/>
-      <PrizesSection/>
-      <OurSpeakers></OurSpeakers>
+      {/* <PrizesSection/> */}
+      <OurSpeakers />
       <FAQSection />
       <Footer/>
     </>

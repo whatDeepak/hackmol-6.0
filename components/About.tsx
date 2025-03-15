@@ -247,7 +247,7 @@ export default function AboutUs() {
               <div className="absolute bottom-[1px] left-[1px] transform -translate-x-[50%] translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-1">30 Hours</h3>
+              <h3 className="text-xl font-bold mb-1 font-custom">30 Hours</h3>
               <p className="text-gray-400 font-sans">Non-stop coding journey</p>
             </div>
           </div>
@@ -259,7 +259,7 @@ export default function AboutUs() {
               <div className="absolute bottom-[1px] left-[1px] transform -translate-x-[50%] translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-1">Amazing Prizes</h3>
+              <h3 className="text-xl font-bold mb-1 font-custom">Amazing Prizes</h3>
               <p className="text-gray-400 font-sans">Legendary rewards await</p>
             </div>
           </div>
@@ -271,7 +271,7 @@ export default function AboutUs() {
               <div className="absolute bottom-[1px] left-[1px] transform -translate-x-[50%] translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-1">Workshops</h3>
+              <h3 className="text-xl font-bold mb-1 font-custom">Workshops</h3>
               <p className="text-gray-400 font-sans">Master new technologies</p>
             </div>
           </div>
@@ -283,7 +283,7 @@ export default function AboutUs() {
               <div className="absolute bottom-[1px] left-[1px] transform -translate-x-[50%] translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-1">Mentorship</h3>
+              <h3 className="text-xl font-bold mb-1 font-custom">Mentorship</h3>
               <p className="text-gray-400 font-sans">Guidance from tech wizards</p>
             </div>
           </div>
