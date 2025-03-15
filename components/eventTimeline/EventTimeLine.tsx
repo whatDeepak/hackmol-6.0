@@ -78,18 +78,16 @@ const events = [
   },
 ];
 
-const EventTimeline: React.FC<EventTimelineProps> = ({
-  title = "Event Timeline",
-  subtitle = "YOUR GUIDE TO HACKMOL 6.0",
-}) => {
+const EventTimeline: React.FC<EventTimelineProps> = () => {
   return (
-    <div className="event-timeline-container font-custom">
+    <div className="event-timeline-container font-custom bg-gradient-to-b from-[#0f1524] via-[#000] to-slate-950">
       <div className="upper">
         <div className="event-timeline-header">
           <h1 className="event-timeline-title text-5xl">
-            <span className="event-title-highlight ">Event</span> Timeline
+            <span>Event timeline</span>
+            <div className="h-0.5 max-w-xl bg-gradient-to-r from-transparent via-[#0ce3ff] to-transparent mx-auto mb-2"></div>
           </h1>
-          <h3 className="event-timeline-subtitle">{subtitle}</h3>
+          <h3 className="event-timeline-subtitle font-sans uppercase">Chronicles of Battle</h3>
         </div>
       </div>
 

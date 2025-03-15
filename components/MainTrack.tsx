@@ -17,12 +17,12 @@ export default function MainTracks() {
       
       <div className="max-w-7xl mx-auto">
         <header className="mb-12 text-center">
-          <h1 className="text-5xl font-bold mb-2 font-custom ">
-            <span className="text-[#0cf]">Main</span> Tracks
+          <h1 className="text-5xl font-bold mb-1 font-custom ">
+            <span className="event-timeline-title">Main Tracks</span>
           </h1>
           <div className="h-0.5 max-w-lg bg-gradient-to-r from-transparent via-[#0ce3ff] to-transparent mx-auto mb-2"></div>
-          <p className="text-[#0cf] uppercase tracking-wider text-sm">
-            YOUR GUIDE TO HACKMOL 6.0
+          <p className="text-[#0cf] uppercase tracking-wider text-sm font-sans">
+          Trials of the Worthy
           </p>
         </header>
 

@@ -408,8 +408,7 @@ export default function Home() {
           }
         `}</style>
       </main>
-      <AboutUs
-      ></AboutUs>
+      <AboutUs />
       <EventTimeline events={[]}/>
       <MainTracks/>
       <SponserTrackCarousel/>

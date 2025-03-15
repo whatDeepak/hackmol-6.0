@@ -12,7 +12,7 @@ import {
   BookOpen,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 export default function AboutUs() {
   const images = [
     {
@@ -62,6 +62,16 @@ export default function AboutUs() {
     setCurrentIndex(slideIndex);
   };
 
+  const [bgDots, setBgDots] = useState<{ top: string; left: string }[]>([]);
+
+  useEffect(() => {
+    const dots = [...Array(25)].map((_, i) => ({
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+    }));
+    setBgDots(dots);
+  }, []);
+
   return (
     <main
       className={cn(
@@ -70,7 +80,7 @@ export default function AboutUs() {
     >
       {/* Background dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+        {bgDots.slice(0, 20).map((dot, i) => (
           <div
             key={i}
             className={cn(
@@ -78,49 +88,51 @@ export default function AboutUs() {
               i % 4 == 0 ? "bg-[#0ce3ff]" : "bg-white/20"
             )}
             style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
+              top: dot.top,
+              left: dot.left,
             }}
           />
         ))}
       </div>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(5)].map((_, i) => (
+        {bgDots.slice(-5).map((dot, i) => (
           <div
             key={i}
             className="absolute w-6 h-6 bg-[#4fd2d942] rounded-full animate-float "
             style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
+              top: dot.top,
+              left: dot.left,
             }}
           >
-            <div className="absolute top-[50%] left-[50% ] transform translate-x-[150%] -translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float " />
+            <div className="absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] w-1 h-1 bg-[#4fd2d9] rounded-full animate-float " />
           </div>
         ))}
       </div>
 
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-12 py-12">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <div className="text-5xl md:text-6xl font-bold mb-2 font-custom w-full ">
-            <span className={`text-[#0ce3ff] `}>About</span> HackMol 6.0
+          <div className="text-5xl md:text-6xl font-bold font-custom w-full">
+            <span className="event-timeline-title">About HackMol 6.0 </span>
           </div>
           <div className="h-0.5 max-w-xl bg-gradient-to-r from-transparent via-[#0ce3ff] to-transparent mx-auto mb-2"></div>
-          <p className="text-[#0ce3ff] text-lg tracking-wider">
-            EXPLORE THE DIGITAL UNIVERSE
+          <p className="text-[#0ce3ff] text-lg tracking-wider font-sans uppercase">
+            explore the realm of coding
           </p>
         </div>
 
         {/* Main content */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start ">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start  font-sans">
           {/* Left column */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">
-                <span className="text-[#0ce3ff]">Code Like a God</span>, Leave a
-                Legacy! <span className="text-[#0ce3ff] inline-block ">◇</span>
+              <h2 className="text-3xl md:text-4xl font-bold inline-flex items-center gap-2">
+                <span className="text-xl text-[#0ce3ff]">◇</span>
+                <span className="text-[#0ce3ff]">
+                  {/* Code Like a God, Leave a Legacy! */}
+                  Forge Your Code,</span> Leave Your Mark!
               </h2>
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed text-justify">
                 The sixth edition of HackMol, organised by IOTA & GDGC NIT
                 Jalandhar, is your battleground for innovation. This 30-hour
                 hackathon unites warriors of code—both seasoned champions and
@@ -169,10 +181,10 @@ export default function AboutUs() {
           <div className="space-y-6">
             <div className="flex items-center">
               <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center gap-2">
-                <span className="text-[#0ce3ff]  text-2xl  inline-block">
+                <span className="text-[#0ce3ff]  text-xl  inline-block">
                   ◇
                 </span>
-                <span className="text-[#0ce3ff] ">Years of</span> Legacy{" "}
+                <span className="text-[#0ce3ff] ">Legends </span> Carved in Code{" "}
               </h2>
             </div>
 
@@ -229,50 +241,50 @@ export default function AboutUs() {
         {/* Features section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
           <div className="flex items-start gap-4 p-4">
-            <div className="relative w-12 h-12 rounded-lg border border-[#0ce3ff] flex items-center justify-center text-[#0ce3ff] shrink-0">
+            <div className="relative w-12 h-12 rounded-lg border border-[#0ce3ff78] bg-[#0ce3ff12] flex items-center justify-center text-[#0ce3ff] shrink-0">
               <Clock className="w-6 h-6" />
-              <div className="absolute top-0 right-0 transform translate-x-[50%] -translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
-              <div className="absolute bottom-0 left-0 transform -translate-x-[50%] translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
+              <div className="absolute top-[1px] right-[1px] transform translate-x-[50%] -translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
+              <div className="absolute bottom-[1px] left-[1px] transform -translate-x-[50%] translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
             </div>
             <div>
               <h3 className="text-xl font-bold mb-1">30 Hours</h3>
-              <p className="text-gray-400">Non-stop coding journey</p>
+              <p className="text-gray-400 font-sans">Non-stop coding journey</p>
             </div>
           </div>
 
           <div className="flex items-start gap-4 p-4">
-            <div className="relative w-12 h-12 rounded-lg border border-[#0ce3ff] flex items-center justify-center text-[#0ce3ff] shrink-0">
+            <div className="relative w-12 h-12 rounded-lg border border-[#0ce3ff78] bg-[#0ce3ff12] flex items-center justify-center text-[#0ce3ff] shrink-0">
               <Trophy className="w-6 h-6" />
-              <div className="absolute top-0 right-0 transform translate-x-[50%] -translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
-              <div className="absolute bottom-0 left-0 transform -translate-x-[50%] translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
+              <div className="absolute top-[1px] right-[1px] transform translate-x-[50%] -translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
+              <div className="absolute bottom-[1px] left-[1px] transform -translate-x-[50%] translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
             </div>
             <div>
               <h3 className="text-xl font-bold mb-1">Amazing Prizes</h3>
-              <p className="text-gray-400">Legendary rewards await</p>
+              <p className="text-gray-400 font-sans">Legendary rewards await</p>
             </div>
           </div>
 
           <div className="flex items-start gap-4 p-4">
-            <div className="relative w-12 h-12 rounded-lg border border-[#0ce3ff] flex items-center justify-center text-[#0ce3ff] shrink-0">
+            <div className="relative w-12 h-12 rounded-lg border border-[#0ce3ff78] bg-[#0ce3ff12] flex items-center justify-center text-[#0ce3ff] shrink-0">
               <Zap className="w-6 h-6" />
-              <div className="absolute top-0 right-0 transform translate-x-[50%] -translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
-              <div className="absolute bottom-0 left-0 transform -translate-x-[50%] translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
+              <div className="absolute top-[1px] right-[1px] transform translate-x-[50%] -translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
+              <div className="absolute bottom-[1px] left-[1px] transform -translate-x-[50%] translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
             </div>
             <div>
               <h3 className="text-xl font-bold mb-1">Workshops</h3>
-              <p className="text-gray-400">Master new technologies</p>
+              <p className="text-gray-400 font-sans">Master new technologies</p>
             </div>
           </div>
 
           <div className="flex items-start gap-4 p-4">
-            <div className="relative w-12 h-12 rounded-lg border border-[#0ce3ff] flex items-center justify-center text-[#0ce3ff] shrink-0">
+            <div className="relative w-12 h-12 rounded-lg border border-[#0ce3ff78] bg-[#0ce3ff12] flex items-center justify-center text-[#0ce3ff] shrink-0">
               <Lightbulb className="w-6 h-6" />
-              <div className="absolute top-0 right-0 transform translate-x-[50%] -translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
-              <div className="absolute bottom-0 left-0 transform -translate-x-[50%] translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
+              <div className="absolute top-[1px] right-[1px] transform translate-x-[50%] -translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
+              <div className="absolute bottom-[1px] left-[1px] transform -translate-x-[50%] translate-y-[50%] w-1.5 h-1.5 bg-[#4fd2d9] rounded-full animate-float" />
             </div>
             <div>
               <h3 className="text-xl font-bold mb-1">Mentorship</h3>
-              <p className="text-gray-400">Guidance from tech wizards</p>
+              <p className="text-gray-400 font-sans">Guidance from tech wizards</p>
             </div>
           </div>
         </div>
