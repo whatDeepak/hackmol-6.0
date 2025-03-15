@@ -11,6 +11,7 @@ import SponserTrackCarousel from "@/components/SponserTrack";
 import Footer from "@/components/Footer";
 import PrizesSection from "@/components/Prize_Section/PrizesSection";
 import EventTimeline from "@/components/eventTimeline/EventTimeLine";
+import Navbar from "@/components/Navbar";
 
 
 export default function Home() {
@@ -74,6 +75,7 @@ export default function Home() {
 
   return (
     <>
+      <Navbar/>
       <main className="relative h-[100vh] overflow-x-hidden bg-gradient-to-b from-[#1e5b6e] to-[#0a2a35]">
         <div
           ref={parallaxRef}
