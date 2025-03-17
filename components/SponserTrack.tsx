@@ -9,10 +9,10 @@ const sponsors = [
     id: 1,
     logo: "/sponsors/gofr.png",
     title: "Gofr (Gold Sponsor)",
-    description: "Gofr is revolutionizing the blockchain payments space with seamless, secure, and scalable solutions. Offering instant crypto transactions with top-tier security, Gofr ensures businesses and individuals can experience the future of finance without barriers.",
+    description: "GoFr is an opinionated web framework written in Go (Golang) designed to build robust and scalable applications. It prioritizes simplicity, offering a user-friendly abstraction for developers, with built-in support for logging, monitoring, and tracing.",
     features: [
-      "Seamless on-chain transactions",
-      "Instant crypto payments",
+      "Efficient logging and monitoring",
+      "Seamless API development",
       "Gold Sponsor",
     ],
   },
