@@ -1,36 +1,87 @@
-import { Instagram, Twitter, Facebook } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
 
 const Footer = () => {
   return (
-    <footer className="pt-20 relative bg-gradient-to-b from-[#00122E] to-[#001B40] text-white p-8 text-center">
+    <footer className="pt-20 relative text-white p-8 text-center bg-gradient-to-b from-[#00122E] to-[#001B40]">
       {/* Left Ornament */}
-      <div className="absolute top-0 left-0 w-25 h-full">
+      <div className="absolute top-0 left-0 w-25 h-full pointer-events-none opacity-0 md:opacity-50 lg:opacity-100">
         <img src="/3.png" alt="Left Ornament" className="h-full w-full" />
       </div>
       {/* Right Ornament */}
-      <div className="absolute top-0 right-0 w-50 h-full">
+      <div className="absolute top-0 right-0 w-50 h-full pointer-events-none opacity-0 md:opacity-50 lg:opacity-100">
         <img src="/2.png" alt="Right Ornament" className="h-full w-full" />
       </div>
 
-      <div className="mt-10 flex flex-wrap justify-between max-w-5xl mx-auto font-custom text-white">
+      <div className="mt-10 flex flex-wrap lg:justify-between flex-col lg:flex-row mx-32 font-custom text-white">
         {/* Quick Links Section */}
         <div className="mt-6 text-left">
-          <h3 className="text-4xl text-[#E3DAAF]">QUICK LINKS</h3>
+          <h3 className="text-4xl text-[#E3DAAF]">THE JOURNEY</h3>
           <ul className="text-xl mt-2 space-y-1">
-            <li>- The Team</li>
-            <li>- Upcoming Events</li>
-            <li>- Past Events</li>
-            <li>- Join Us</li>
+            <li>
+              <Link href={"/"} passHref>
+                - register
+              </Link>
+            </li>
+            <li>
+              <Link href={"#about"} passHref>
+                - about
+              </Link>
+            </li>
+            <li>
+              <Link href={"#schedule"} passHref>
+                - timeline
+              </Link>
+            </li>
+            <li>
+              <Link href={"#tracks"} passHref>
+                - tracks
+              </Link>
+            </li>
+            <li>
+              <Link href={"#speakers"} passHref>
+                - speakers
+              </Link>
+            </li>
           </ul>
         </div>
 
         {/* Social Media Section */}
-        <div className="mt-6 text-right">
-          <h3 className="text-4xl text-[#E3DAAF]">GET THE LATEST TEA</h3>
-          <div className="flex space-x-4 justify-end mt-2 text-white">
-            <Instagram size={32} className="cursor-pointer" />
-            <Twitter size={32} className="cursor-pointer" />
-            <Facebook size={32} className="cursor-pointer" />
+        <div className="mt-6 lg:text-right text-left">
+          <h3 className="text-4xl text-[#E3DAAF]">HOSTS OF THE REALM</h3>
+          <div className="flex space-x-4 lg:justify-end mt-2 text-white items-center">
+            <Link href="https://www.instagram.com/iota_nitj/" passHref target="_blank">
+              <Instagram size={32} className="cursor-pointer" />
+            </Link>
+            <Link href="https://www.linkedin.com/in/iota-nitj/" passHref target="_blank">
+              <Linkedin size={32} className="cursor-pointer" />
+            </Link>
+            <Image
+              src="/icons/IOTA.png"
+              alt="IOTA Logo"
+              width={50}
+              height={50}
+              style={{ filter: "invert(100%) brightness(100)" }}
+              priority
+            />
+          </div>
+          <div className="flex space-x-4 lg:justify-end mt-2 text-white items-center">
+            <Link href="https://www.instagram.com/dscnitj/" passHref target="_blank">
+              <Instagram size={32} className="cursor-pointer" />
+            </Link>
+            <Link href="https://www.linkedin.com/company/dscnitj/" passHref target="_blank">
+              <Linkedin size={32} className="cursor-pointer" />
+            </Link>
+            <Image
+              src="/icons/GDGC.png"
+              alt="GDGC Logo"
+              width={50}
+              height={44}
+              priority
+              style={{ padding: "0px 3px" }}
+            />
           </div>
         </div>
       </div>
@@ -46,7 +97,7 @@ const Footer = () => {
               textAnchor="middle"
               className="text-[#E3DAAF]"
             >
-              PRESENTED BY HACKMOL | GDSC X IOTA
+              PRESENTED BY HACKMOL | GDGC X IOTA
             </textPath>
           </text>
         </svg>

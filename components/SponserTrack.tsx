@@ -7,50 +7,35 @@ import { motion, AnimatePresence } from "framer-motion";
 const sponsors = [
   {
     id: 1,
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-RYxjSFYbUEYtkjcC7Ysz6qPh0jLnaJ.png",
-    title: "polygon",
-    description:
-      "Dab Dab Dub Dub Bimboom Tiding Dhanda Ksdas Yasu Ka Gar Oda Ghar Mera Ghar Aai La Jaadu Beem Boom Ting Ding Fing Ding Z Zing Yam Hu Mai",
+    logo: "/sponsors/gofr.png",
+    title: "Gofr (Gold Sponsor)",
+    description: "Gofr is revolutionizing the blockchain payments space with seamless, secure, and scalable solutions. Offering instant crypto transactions with top-tier security, Gofr ensures businesses and individuals can experience the future of finance without barriers.",
     features: [
-      "Ye Use Krna Adbas Adadljnad Sdjajdda",
-      "Ye Use Krna Adbas Adadljnad Sdjajdda",
-      "Ye Use Krna Adbas Adadljnad Sdjajdda",
+      "Seamless on-chain transactions",
+      "Instant crypto payments",
+      "Gold Sponsor",
     ],
   },
   {
     id: 2,
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-RYxjSFYbUEYtkjcC7Ysz6qPh0jLnaJ.png",
-    title: "Sponsor 2",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    logo: "/sponsors/Devfolio.png",
+    title: "Devfolio (Gold Sponsor)",
+    description: "Devfolio is the leading hackathon platform that empowers developers worldwide. By providing a seamless project submission experience, fostering innovation, and connecting creators with opportunities, Devfolio continues to shape the future of tech communities.",
     features: [
-      "Feature 1 for Sponsor 2",
-      "Feature 2 for Sponsor 2",
-      "Feature 3 for Sponsor 2",
+      "Leading hackathon platform",
+      "Empowering developers worldwide",
+      "Gold Sponsor",
     ],
   },
   {
     id: 3,
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-RYxjSFYbUEYtkjcC7Ysz6qPh0jLnaJ.png",
-    title: "Sponsor 3",
-    description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    logo: "/sponsors/ethindia.png",
+    title: "ETHIndia (Silver Sponsor)",
+    description: "ETHIndia is India's premier Ethereum hackathon, bringing together blockchain pioneers, developers, and visionaries to build the decentralized future. With a strong focus on innovation and collaboration, ETHIndia is the hub for cutting-edge Web3 advancements.",
     features: [
-      "Feature 1 for Sponsor 3",
-      "Feature 2 for Sponsor 3",
-      "Feature 3 for Sponsor 3",
-    ],
-  },
-  {
-    id: 4,
-    logo: "/placeholder.svg?height=100&width=200",
-    title: "Sponsor 4",
-    description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    features: [
-      "Feature 1 for Sponsor 4",
-      "Feature 2 for Sponsor 4",
-      "Feature 3 for Sponsor 4",
+      "India's premier Ethereum hackathon",
+      "Building the decentralized future",
+      "Silver Sponsor",
     ],
   },
 ];
@@ -260,7 +245,7 @@ export default function SponserTrackCarousel() {
                         }}
                         transition={{ duration: 4, repeat: Infinity }}
                       >
-                        <span className="text-[#00e5ff] text-2xl">◆</span>
+                        <span className="text-[#00e5ff] text-lg">◆</span>
                       </motion.div>
                       <p>{feature}</p>
                     </motion.div>
