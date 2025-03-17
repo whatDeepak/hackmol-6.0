@@ -16,29 +16,24 @@ import { useEffect, useState } from "react";
 export default function AboutUs() {
   const images = [
     {
-      src: "https://res.cloudinary.com/ddd4ftror/image/upload/v1741551607/hackmol/otfahhaq0c2psi8hipl3.png",
-      alt: "HackMol 5.0 - Memories from Another Realm",
-      caption: "HackMol 5.0 • Memories from Another Realm",
+      src: "/aboutUs/gdgc-1.jpg",
+      alt: "Warriors of GDGC Forge Their Path",
+      caption: "Warriors of GDGC Forge Their Path",
     },
     {
       src: "https://res.cloudinary.com/ddd4ftror/image/upload/v1741584529/hackmol/jdu0gsockhfokokiud6l.jpg",
-      alt: "IOTA Event Image",
-      caption: "Another Amazing Event",
+      alt: "Champions of IOTA Rise to the Challenge",
+      caption: "Champions of IOTA Rise to the Challenge",
     },
     {
-      src: "https://res.cloudinary.com/ddd4ftror/image/upload/v1741584529/hackmol/jdu0gsockhfokokiud6l.jpg",
-      alt: "Third Event Image",
-      caption: "More Exciting Moments",
+      src: "/aboutUs/gdgc-2.jpg",
+      alt: "GDGC Warriors Preparing for the Trials",
+      caption: "GDGC Warriors Preparing for the Trials",
     },
     {
-      src: "https://res.cloudinary.com/ddd4ftror/image/upload/v1741584529/hackmol/jdu0gsockhfokokiud6l.jpg",
-      alt: "Fourth Event Image",
-      caption: "Final Celebration",
-    },
-    {
-      src: "https://res.cloudinary.com/ddd4ftror/image/upload/v1741584529/hackmol/jdu0gsockhfokokiud6l.jpg",
-      alt: "Fifth Event Image",
-      caption: "Team Photo",
+      src: "/aboutUs/IOTA-2.jpeg",
+      alt: "IOTA Legends Stand Ready for Battle",
+      caption: "IOTA Legends Stand Ready for Battle",
     },
   ];
 
@@ -70,6 +65,14 @@ export default function AboutUs() {
       left: `${Math.random() * 100}%`,
     }));
     setBgDots(dots);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % 4);
+    }, 3000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
