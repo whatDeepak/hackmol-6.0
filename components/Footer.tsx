@@ -7,6 +7,17 @@ import Link from "next/link";
 import { motion } from "framer-motion"; // Import motion
 
 const Footer = () => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://apply.devfolio.co/v2/sdk.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <motion.footer
@@ -79,6 +90,22 @@ const Footer = () => {
               height={50}
               style={{ filter: "invert(100%) brightness(100)" }}
               priority
+            />
+          </div>
+          <div className="flex space-x-4 lg:justify-end mt-2 text-white items-center">
+            <Link href="https://www.instagram.com/dscnitj/" passHref target="_blank">
+              <Instagram size={32} className="cursor-pointer" />
+            </Link>
+            <Link href="https://www.linkedin.com/company/dscnitj/" passHref target="_blank">
+              <Linkedin size={32} className="cursor-pointer" />
+            </Link>
+            <Image
+              src="/icons/GDGC.png"
+              alt="GDGC Logo"
+              width={50}
+              height={44}
+              priority
+              style={{ padding: "0px 3px" }}
             />
           </div>
         </motion.div>
