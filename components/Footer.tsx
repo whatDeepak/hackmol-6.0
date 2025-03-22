@@ -77,22 +77,6 @@ const Footer = () => {
         >
           <h3 className="text-4xl text-[#E3DAAF]">HOSTS OF THE REALM</h3>
           <div className="flex space-x-4 lg:justify-end mt-2 text-white items-center">
-            <Link href="https://www.instagram.com/iota_nitj/" passHref target="_blank">
-              <Instagram size={32} className="cursor-pointer" />
-            </Link>
-            <Link href="https://www.linkedin.com/in/iota-nitj/" passHref target="_blank">
-              <Linkedin size={32} className="cursor-pointer" />
-            </Link>
-            <Image
-              src="/icons/IOTA.png"
-              alt="IOTA Logo"
-              width={50}
-              height={50}
-              style={{ filter: "invert(100%) brightness(100)" }}
-              priority
-            />
-          </div>
-          <div className="flex space-x-4 lg:justify-end mt-2 text-white items-center">
             <Link href="https://www.instagram.com/dscnitj/" passHref target="_blank">
               <Instagram size={32} className="cursor-pointer" />
             </Link>
@@ -106,6 +90,23 @@ const Footer = () => {
               height={44}
               priority
               style={{ padding: "0px 3px" }}
+            />
+          </div>
+          
+          <div className="flex space-x-4 lg:justify-end mt-2 text-white items-center">
+            <Link href="https://www.instagram.com/iota_nitj/" passHref target="_blank">
+              <Instagram size={32} className="cursor-pointer" />
+            </Link>
+            <Link href="https://www.linkedin.com/in/iota-nitj/" passHref target="_blank">
+              <Linkedin size={32} className="cursor-pointer" />
+            </Link>
+            <Image
+              src="/icons/IOTA.png"
+              alt="IOTA Logo"
+              width={50}
+              height={50}
+              style={{ filter: "invert(100%) brightness(100)" }}
+              priority
             />
           </div>
         </motion.div>
