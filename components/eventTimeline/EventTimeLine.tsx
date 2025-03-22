@@ -42,18 +42,12 @@ const events = [
   },
   {
     id: "4",
-    title: "The Warrior's Pledge",
-    description: "Team Submission for Review",
-    date: "March 25, 2025",
-  },
-  {
-    id: "5",
     title: "The Scrolls of Fate",
     description: "PPT Submission",
     date: "March 29, 2025",
   },
   {
-    id: "6",
+    id: "5",
     title: "The Final Call to Arms",
     description: "Registration Ends",
     date: "March 29, 2025",

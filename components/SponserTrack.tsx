@@ -47,7 +47,7 @@ const sponsors = [
     features: [
       "Modern, open-source programming language",
       "Global community for developer education",
-      "Sponsor",
+      "Silver Sponsor",
     ],
   },
 ];
