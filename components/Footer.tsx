@@ -34,7 +34,7 @@ const Footer = () => {
           <ul className="text-xl mt-2 space-y-1">
             <li>
               <div
-                className="cursor-pointer hover:text-cyan-400 transition-colors duration-200 apply-button"
+                className="cursor-pointer hover:text-cyan-400 transition-colors duration-200"
                 data-hackathon-slug="hackmol-6"
                 data-button-theme="dark"
                 style={{ display: "inline-block" }}
