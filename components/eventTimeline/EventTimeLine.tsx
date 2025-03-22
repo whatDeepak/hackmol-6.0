@@ -1,5 +1,5 @@
 import React from "react";
-import "./EventTimeline.css";
+import "./EventTimeLine.css";
 import bg from "./image1.png";
 import bg2 from "./image2.png";
 import Image from "next/image";
