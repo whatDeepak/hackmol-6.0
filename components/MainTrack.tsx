@@ -53,7 +53,7 @@ export default function MainTracks() {
                   </div>
                 </div>
                 <div className="mb-4">
-                  <div className="font-bold text-lg">1st Runer Up</div>
+                  <div className="font-bold text-lg">1st Runner Up</div>
                   <div className="flex items-center gap-2 font-sans font-normal">
                     <Li />
                     30,000

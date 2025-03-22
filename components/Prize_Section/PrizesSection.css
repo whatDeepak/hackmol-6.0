@@ -1,10 +1,4 @@
-@font-face {
-    font-family: 'Berserker';
-    src: url('/fonts/Berserker.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap; 
-}
+
 .prizes-section {
     background: linear-gradient(180deg, #040D1A 0%, #0C1930 100%);
     padding: 4rem 2rem;
@@ -57,7 +51,6 @@
   position: relative;
   z-index: 2;
   text-align: center;
-  font-family: 'Berserker',sans-serif;
   font-size: 4rem;
   font-weight: bold;
   margin-bottom: 3rem;
@@ -100,7 +93,6 @@
 }
 
 .prize-position {
-  font-family: 'Berserker',sans-serif;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
@@ -108,7 +100,6 @@
 }
 
 .prize-amount {
-  font-family: 'Berserker',sans-serif;
   font-size: 1.25rem;
   color: #ffffff;
   margin-bottom: 1.5rem;
