@@ -1,6 +1,5 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
+// components/Navbar.tsx
+import React, { useState } from "react";
 import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
@@ -19,11 +18,7 @@ const navItems: NavItem[] = [
   { label: "FAQ", href: "#faq" },
 ];
 
-interface NavbarProps {
-  onRegisterClick: () => void;
-}
-
-const Navbar = ({ onRegisterClick }: NavbarProps) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -51,19 +46,17 @@ const Navbar = ({ onRegisterClick }: NavbarProps) => {
           </div>
 
           {/* Register Button */}
-          <div className="hidden md:block" >
-            <button
-              className="relative group transition-colors duration-200 px-8 py-3 text-white text-lg font-medium cursor-pointer"
-              style={{ display: "inline-block" }}
-              onClick={onRegisterClick}
-            >
-              <div className="absolute top-1 left-1 w-6 h-4 border-t-2 border-l-2 border-cyan-400 rounded-tl-sm transition-all ease-in duration-100 group-hover:top-2 group-hover:left-2 group-hover:w-5 group-hover:h-4"></div>
-              <div className="absolute top-1 right-1 w-6 h-4 border-t-2 border-r-2 border-cyan-400 rounded-tr-sm transition-all ease-in duration-100 group-hover:top-2 group-hover:right-2 group-hover:w-5 group-hover:h-4"></div>
-              <div className="absolute bottom-1 left-1 w-6 h-4 border-b-2 border-l-2 border-cyan-400 rounded-bl-sm transition-all ease-in duration-100 group-hover:bottom-2 group-hover:left-2 group-hover:w-5 group-hover:h-4"></div>
-              <div className="absolute bottom-1 right-1 w-6 h-4 border-b-2 border-r-2 border-cyan-400 rounded-br-sm transition-all ease-in duration-100 group-hover:bottom-2 group-hover:right-2 group-hover:w-5 group-hover:h-4"></div>
-              Register
-            </button>
-          </div>
+          {/* <div className="hidden md:block">
+            <Link href="/register" className="relative group">
+              <div className="transition-colors duration-200 px-8 py-3 text-white text-lg font-medium relative">
+                  <div className="absolute top-1 left-1 w-6 h-4 border-t-2 border-l-2 border-cyan-400 rounded-tl-sm transition-all ease-in duration-100 group-hover:top-2 group-hover:left-2 group-hover:w-5 group-hover:h-4"></div>
+                  <div className="absolute top-1 right-1 w-6 h-4 border-t-2 border-r-2 border-cyan-400 rounded-tr-sm transition-all ease-in duration-100 group-hover:top-2 group-hover:right-2 group-hover:w-5 group-hover:h-4"></div>
+                  <div className="absolute bottom-1 left-1 w-6 h-4 border-b-2 border-l-2 border-cyan-400 rounded-bl-sm transition-all ease-in duration-100 group-hover:bottom-2 group-hover:left-2 group-hover:w-5 group-hover:h-4"></div>
+                  <div className="absolute bottom-1 right-1 w-6 h-4 border-b-2 border-r-2 border-cyan-400 rounded-br-sm transition-all ease-in duration-100 group-hover:bottom-2 group-hover:right-2 group-hover:w-5 group-hover:h-4"></div>
+                Register
+              </div>
+            </Link>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
@@ -92,15 +85,13 @@ const Navbar = ({ onRegisterClick }: NavbarProps) => {
                       {item.label}
                     </Link>
                   ))}
-                  <div
-                    className="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded text-center mt-4 apply-button"
-                    data-hackathon-slug="hackmol-6"
-                    data-button-theme="dark"
-                    style={{ height: "44px", width: "312px" }}
+                  {/* <Link
+                    href="/register"
+                    className="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded text-center mt-4"
                     onClick={() => setIsOpen(false)}
                   >
                     Register
-                  </div>
+                  </Link> */}
                 </div>
               </SheetContent>
             </Sheet>
