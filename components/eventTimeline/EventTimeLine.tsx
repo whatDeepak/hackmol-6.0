@@ -39,7 +39,7 @@ const events = [
     id: "4",
     title: "The Warrior's Pledge",
     description: "Team Submission for Review",
-    date: "March 20, 2025",
+    date: "March 25, 2025",
   },
   {
     id: "5",

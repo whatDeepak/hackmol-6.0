@@ -1,9 +1,21 @@
+import { useEffect } from "react";
 import { Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-
 const Footer = () => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://apply.devfolio.co/v2/sdk.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <footer className="pt-20 relative text-white p-8 text-center bg-gradient-to-b from-[#00122E] to-[#001B40]">
       {/* Left Ornament */}
@@ -21,9 +33,14 @@ const Footer = () => {
           <h3 className="text-4xl text-[#E3DAAF]">THE JOURNEY</h3>
           <ul className="text-xl mt-2 space-y-1">
             <li>
-              <Link href={"/"} passHref>
+              <div
+                className="cursor-pointer hover:text-cyan-400 transition-colors duration-200"
+                data-hackathon-slug="hackmol-6"
+                data-button-theme="dark"
+                style={{ display: "inline-block" }}
+              >
                 - register
-              </Link>
+              </div>
             </li>
             <li>
               <Link href={"#about"} passHref>

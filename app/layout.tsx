@@ -52,14 +52,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" type="image/png" href="/favicon.png" />
+      </head>
       <body className={berserker.variable}>
         {children}
-        <script defer async src="https://apply.devfolio.co/v2/sdk.js"></script>  
+        <script defer async src="https://apply.devfolio.co/v2/sdk.js"></script>
       </body>
     </html>
   )
 }
-
 
 
 import './globals.css'
