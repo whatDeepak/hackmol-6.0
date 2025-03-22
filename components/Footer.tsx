@@ -17,7 +17,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="pt-20 relative text-white p-8 text-center bg-gradient-to-b from-[#00122E] to-[#001B40]">
+    <footer className="pt-20 relative text-white px-8 text-center bg-gradient-to-b from-[#00122E] to-[#001B40]">
       {/* Left Ornament */}
       <div className="absolute top-0 left-0 w-25 h-full pointer-events-none opacity-0 md:opacity-50 lg:opacity-100">
         <img src="/3.png" alt="Left Ornament" className="h-full w-full" />
