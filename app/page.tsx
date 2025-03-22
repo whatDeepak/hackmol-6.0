@@ -74,9 +74,14 @@ export default function Home() {
   const titleOpacity = isMounted ? 1 - scrollY * 0.002 : 1;
   const titlePosition = isMounted ? 0 + scrollY * 0.4 : 0;
 
+  const devfolioButtonRef = useRef<HTMLButtonElement>(null);
+  const handleRegisterClick = () => {
+    devfolioButtonRef.current?.click(); // Simulate a button click
+  };
+
   return (
     <>
-      <Navbar/>
+      <Navbar onRegisterClick={handleRegisterClick}/>
       <main className="relative h-[100vh] overflow-x-hidden bg-gradient-to-b from-[#1e5b6e] to-[#0a2a35]">
         <div
           ref={parallaxRef}
@@ -212,7 +217,7 @@ export default function Home() {
               hack the realms
             </p>
 
-            <DevfolioButton />
+            <DevfolioButton ref={devfolioButtonRef} />
 
             {/* Enhanced scroll indicator */}
             <div className="animate-bounce mt-4">

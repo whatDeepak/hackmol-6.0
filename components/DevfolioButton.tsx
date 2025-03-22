@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, forwardRef } from "react";
 
-const DevfolioButton = () => {
+const DevfolioButton = forwardRef<HTMLDivElement>((_, ref) => {
     useEffect(() => {
         const script = document.createElement("script");
         script.src = "https://apply.devfolio.co/v2/sdk.js";
@@ -17,12 +17,16 @@ const DevfolioButton = () => {
 
     return (
         <div
+            ref={ref} // Attach the ref here
             className="apply-button"
             data-hackathon-slug="hackmol-6"
             data-button-theme="dark"
-            style={{ height: "44px", width: "312px" }}
+            style={{ height: "44px", width: "312px", cursor: "pointer" }} // Ensure it's clickable
         ></div>
     );
-};
+});
+
+// Set display name for debugging in React DevTools
+DevfolioButton.displayName = "DevfolioButton";
 
 export default DevfolioButton;
