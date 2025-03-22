@@ -59,7 +59,7 @@ const Navbar = () => {
           </div>
 
           {/* Register Button */}
-          <div className="hidden md:block">
+          <div className="hidden md:block apply-button">
             <div
               className="relative group transition-colors duration-200 px-8 py-3 text-white text-lg font-medium cursor-pointer"
               data-hackathon-slug="hackmol-6"
