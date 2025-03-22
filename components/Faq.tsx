@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
 // Types
-type TabType = "GENERAL" | "REGISTER" | "PAY" | "EXPENSE";
+type TabType = "GENERAL" | "REGISTER" | "EXPENSE";
 type FAQItem = {
   question: string;
   answer: string;
@@ -27,7 +27,7 @@ const TabSwitcher = ({
   activeTab: TabType;
   setActiveTab: (tab: TabType) => void;
 }) => {
-  const tabs: TabType[] = ["GENERAL", "REGISTER", "PAY", "EXPENSE"];
+  const tabs: TabType[] = ["GENERAL", "REGISTER", "EXPENSE"];
 
   return (
     <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 sm:gap-4 mb-8">
@@ -53,19 +53,14 @@ const TabSwitcher = ({
 const faqData: FAQData = {
   GENERAL: [
     {
-      question: "What is hackmol 6.0?",
+      question: "What is Hackmol 6.0?",
       answer:
-        "Hackmol 6.0 is an annual hackathon event that brings together developers, designers, and innovators to create solutions to real-world problems. It features mentorship, workshops, networking opportunities, and competitive challenges.",
+        "HackMol 6.0 is Punjab's premier 36-hour hackathon, bringing together top developers, innovators, and tech enthusiasts to solve real-world challenges in AI, Web3, IoT, and more. Compete for ₹2L+ in prizes, network with industry experts, and showcase your skills in a high-energy, hybrid-format competition.",
     },
     {
       question: "What can I win?",
       answer:
         "Participants can win cash prizes, tech gadgets, exclusive merchandise, internship opportunities, and recognition from industry leaders. The total prize pool includes various categories and special awards for innovation.",
-    },
-    {
-      question: "What's the cost?",
-      answer:
-        "Admission is free and includes mentors, workshops, food, $wag, resources, and an unforgettable experience!",
     },
     {
       question: "Do I need prior experience?",
@@ -77,46 +72,39 @@ const faqData: FAQData = {
     {
       question: "How do I register?",
       answer:
-        "Registration is open through our website. Simply fill out the registration form with your personal details and project interests to secure your spot.",
+        "Registration is open through the Devfolio page. Simply fill out the registration form with your personal details and project interests to secure your spot.",
     },
     {
       question: "What's the registration deadline?",
       answer:
-        "Registration closes one week before the event. Early registrations get priority access to limited workshops and mentor sessions.",
+        "Registration closes on March 29, 2025. Early registrations get priority access to limited workshops and mentor sessions.",
     },
     {
-      question: "Can I register as a team?",
+      question: "What can be the size of team?",
       answer:
-        "Yes, you can register individually or as a team of up to 4 members. If registering as a team, each member needs to complete their registration and link to the team name.",
-    },
-  ],
-  PAY: [
-    {
-      question: "Are there any hidden costs?",
-      answer:
-        "No, the event is completely free. All workshops, meals, and basic accommodations are covered for participants.",
-    },
-    {
-      question: "Do sponsors offer any financial support?",
-      answer:
-        "Some sponsors offer travel reimbursements for selected participants from distant locations. Details are shared after registration is confirmed.",
+        "Teams must consist of 2 to 4 members. Individual registrations are not allowed. Each team member needs to complete their registration and link to the team name.",
     },
   ],
   EXPENSE: [
     {
+      question: "What's the cost?",
+      answer:
+        "Selected teams will be notified about the cost upon confirmation of their selection.",
+    },
+    {
       question: "Is travel covered?",
       answer:
-        "Travel expenses are generally the responsibility of participants, but we offer limited travel grants for exceptional applications.",
+        "Travel expenses will not be covered. Participants are responsible for their own travel costs, as we do not offer travel grants.",
     },
     {
       question: "What about accommodations?",
       answer:
-        "Basic accommodations are provided for the duration of the event. Participants from out of town will be housed in designated hostels or hotels near the venue.",
+        "Basic accommodation will be provided to all participants for the duration of the event. Separate accommodations will be arranged for male and female participants.",
     },
     {
       question: "Are meals provided?",
       answer:
-        "Yes, all meals are provided throughout the event, including breakfast, lunch, dinner, and snacks. We accommodate various dietary restrictions.",
+        "Yes, all meals are provided throughout the event, including breakfast, lunch, dinner, and snacks.",
     },
   ],
 };
