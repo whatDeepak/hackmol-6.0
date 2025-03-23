@@ -14,7 +14,7 @@ import WomenHeader from "./svg/WomenHeader";
 export default function MainTracks() {
   return (
     <div className="min-h-screen bg-slate-950 text-white p-6 relative" id="tracks">
-      
+
       <div className="max-w-7xl mx-auto">
         <header className="mb-12 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-1 font-custom ">
@@ -22,7 +22,7 @@ export default function MainTracks() {
             <div className="h-0.5 max-w-lg bg-gradient-to-r from-transparent via-[#0ce3ff] to-transparent mx-auto mb-2"></div>
           </h1>
           <p className="text-[#0ce3ff] text-lg tracking-wider font-sans uppercase">
-          Trials of the Worthy
+            Trials of the Worthy
           </p>
         </header>
 
@@ -63,7 +63,7 @@ export default function MainTracks() {
                   <div className="font-bold text-lg">2nd Runner Up</div>
                   <div className="flex items-center gap-2 font-sans font-normal">
                     <Li />
-                    30,000
+                    20,000
                   </div>
                 </div>
                 <div className="absolute top-0 left-0 -z-10">
@@ -128,23 +128,14 @@ export default function MainTracks() {
               </div>
               <div className="relative p-6 text-black grid md:grid-cols-2 gap-4 border-2 border-t-black">
                 <div>
-                  {["Winner", "1st Runner Up", "2nd Runner Up"].map(
-                    (title, index) => (
-                      <div
-                        key={index}
-                        className="mb-4 relative z-10"
-                      >
-                        <div className="font-bold text-lg font-custom">{title}</div>
-                        <div className="flex items-center gap-2 font-sans font-normal">
-                          <Li />{" "}
-                          {index === 0 ? "10,000"
-                            : index === 1 ? "5000" : "3000"}
-                        </div>
-                      </div>
-                    )
-                  )}
+                  <div className="mb-4 relative z-10">
+                    <div className="font-bold text-lg font-custom">Winner</div>
+                    <div className="flex items-center gap-2 font-sans font-normal">
+                      <Li /> 5000
+                    </div>
+                  </div>
                   <div className="absolute top-[50%] left-0 transform -translate-y-[50%] -translate-x-4 overflow-hidden">
-                      <Dog2 />
+                    <Dog2 />
                   </div>
                 </div>
                 <div>
@@ -152,7 +143,7 @@ export default function MainTracks() {
                     Odin's Blessings
                   </div>
                   <ul className="list-none relative z-10 font-sans font-normal">
-                    {[ 
+                    {[
                       "GDG Goodies ",
                       "Exclusive Stickers ",
                       "Souvenirs ",
@@ -194,21 +185,12 @@ export default function MainTracks() {
               </div>
               <div className="relative p-6 text-black grid md:grid-cols-2 gap-4 z-10 border-t-2 border-black">
                 <div>
-                  {["Winner", "1st Runner Up", "2nd Runner Up"].map(
-                    (title, index) => (
-                      <div
-                        key={index}
-                        className="mb-4 relative z-10"
-                      >
-                        <div className="font-bold text-lg font-custom">{title}</div>
-                        <div className="flex items-center gap-2 font-sans font-normal">
-                          <Li />{" "}
-                          {index === 0 ? "10,000" : 
-                            index === 1 ? "5000" : "3000"}
-                        </div>
-                      </div>
-                    )
-                  )}
+                  <div className="mb-4 relative z-10">
+                    <div className="font-bold text-lg font-custom">Winner</div>
+                    <div className="flex items-center gap-2 font-sans font-normal">
+                      <Li /> 5000
+                    </div>
+                  </div>
                   <div className="absolute top-[50%] left-0 transform -translate-y-[50%]">
                     <Cat1 />
                   </div>
@@ -219,13 +201,13 @@ export default function MainTracks() {
                   </div>
                   <ul className="list-item relative z-10 font-sans font-normal">
                     {[
-                    "GDG Goodies ",
-                    "Exclusive Stickers ",
-                    "Souvenirs ",
-                    "Sponsor swags ",
-                    "Hackathon T-shirts",
-                    "Gofr Goodies ",
-                    "zop.dev credits",
+                      "GDG Goodies ",
+                      "Exclusive Stickers ",
+                      "Souvenirs ",
+                      "Sponsor swags ",
+                      "Hackathon T-shirts",
+                      "Gofr Goodies ",
+                      "zop.dev credits",
                     ].map((item, index) => (
                       <li
                         key={index}

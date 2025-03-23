@@ -17,7 +17,7 @@ interface Speaker {
 }
 
 const SpeakersSection: React.FC = () => {
-  const [api, setApi] = useState<CarouselApi>();
+  const [api, setApi] = useState<CarouselApi | null>(null);
   const [current, setCurrent] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const autoPlayInterval = 5000; // 5 seconds
@@ -81,7 +81,13 @@ const SpeakersSection: React.FC = () => {
           <Carousel opts={{ align: "start", loop: true }} className="w-full" setApi={setApi}>
             {/* Left button */}
             <div className="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 z-10">
-              <CarouselPrevious onClick={handleUserInteraction} className="border border-[#5CE5FA] text-[#5CE5FA] hover:bg-[#5CE5FA]/10 transition-all duration-300 h-10 w-10 hover:text-[#5CE5FA] bg-[#5CE5FA]/10" />
+              <CarouselPrevious
+                onClick={() => {
+                  api?.scrollPrev();
+                  handleUserInteraction();
+                }}
+                className="border border-[#5CE5FA] text-[#5CE5FA] hover:bg-[#5CE5FA]/10 transition-all duration-300 h-10 w-10 hover:text-[#5CE5FA] bg-[#5CE5FA]/10"
+              />
             </div>
 
             <CarouselContent>
@@ -94,13 +100,31 @@ const SpeakersSection: React.FC = () => {
 
             {/* Right button */}
             <div className="hidden sm:block absolute right-0 top-1/2 -translate-y-1/2 z-10">
-              <CarouselNext onClick={handleUserInteraction} className="border border-[#5CE5FA] text-[#5CE5FA] hover:bg-[#5CE5FA]/10 transition-all duration-300 h-10 w-10 hover:text-[#5CE5FA] bg-[#5CE5FA]/10" />
+              <CarouselNext
+                onClick={() => {
+                  api?.scrollNext();
+                  handleUserInteraction();
+                }}
+                className="border border-[#5CE5FA] text-[#5CE5FA] hover:bg-[#5CE5FA]/10 transition-all duration-300 h-10 w-10 hover:text-[#5CE5FA] bg-[#5CE5FA]/10"
+              />
             </div>
 
             {/* Mobile buttons */}
             <div className="flex sm:hidden items-center justify-center gap-6 mt-6">
-              <CarouselPrevious onClick={handleUserInteraction} className="static translate-x-0 translate-y-0 bg-transparent border border-[#5CE5FA] text-[#5CE5FA] hover:bg-[#5CE5FA]/10 transition-colors" />
-              <CarouselNext onClick={handleUserInteraction} className="static translate-x-0 translate-y-0 bg-transparent border border-[#5CE5FA] text-[#5CE5FA] hover:bg-[#5CE5FA]/10 transition-colors" />
+              <CarouselPrevious
+                onClick={() => {
+                  api?.scrollPrev();
+                  handleUserInteraction();
+                }}
+                className="static translate-x-0 translate-y-0 bg-transparent border border-[#5CE5FA] text-[#5CE5FA] hover:bg-[#5CE5FA]/10 transition-colors"
+              />
+              <CarouselNext
+                onClick={() => {
+                  api?.scrollNext();
+                  handleUserInteraction();
+                }}
+                className="static translate-x-0 translate-y-0 bg-transparent border border-[#5CE5FA] text-[#5CE5FA] hover:bg-[#5CE5FA]/10 transition-colors"
+              />
             </div>
           </Carousel>
 
