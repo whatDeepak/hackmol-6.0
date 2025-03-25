@@ -14,7 +14,7 @@ interface Speaker {
   company: string;
   image: string;
   socials: {
-    twitter?: string;
+    instagram?: string;
     linkedin?: string;
   };
 }
@@ -74,9 +74,9 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, className }) => {
       {/* Card details overlay at the bottom - responsive for different screen sizes */}
       <div className="absolute bottom-0 left-0 right-0 bg-[#000]/50 p-2 sm:p-3 md:p-4 text-[#5CE5FA] flex items-center justify-between border-t-2 border-[#5CE5FA] font-custom overflow-hidden hover:bg-cyan-950/50 transition duration-500">
         <div className="absolute left-20 right-20 h-1/2 top-0 bg-slate-950 blur-2xl"></div>
-        {speaker.socials.twitter && (
+        {speaker.socials.instagram && (
           <Link
-            href={speaker.socials.twitter}
+            href={speaker.socials.instagram}
             passHref
             className="text-[#5CE5FA] hover:text-white transition-colors z-30 relative"
           >

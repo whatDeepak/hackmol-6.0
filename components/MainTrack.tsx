@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import Li from "./Li";
 import Maintrackback from "./maintrackback";
 import Maintrackback2 from "./maintrackback2";
@@ -101,7 +102,20 @@ export default function MainTracks() {
           </div>
         </div>
         <div className="relative pl-10 md:pl-20 z-50">
-          <Toy />
+          <motion.div
+            animate={{
+              y: [0, 3, 0],
+              rotate: [0, 2, 0, -2, 0],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            style={{ scale: 0.9 }} // Reducing size
+          >
+              <Toy />
+          </motion.div>
         </div>
         {/* Lower tracks container with blue shape in middle */}
 

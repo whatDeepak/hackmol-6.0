@@ -11,7 +11,7 @@ interface Speaker {
   company: string;
   image: string;
   socials: {
-    twitter?: string;
+    instagram?: string;
     linkedin?: string;
   };
 }
@@ -24,10 +24,11 @@ const SpeakersSection: React.FC = () => {
   const autoPlayResumeDelay = 10000; // 10 seconds after interaction
 
   const speakers: Speaker[] = [
-    { id: 1, name: "Umang", role: "Developer and Maintainer", company: "zop.dev", image: "/speakers/sp1.jpeg", socials: { twitter: "https://www.instagram.com/umang_iam/", linkedin: "https://www.linkedin.com/in/umang01-hash/" } },
-    { id: 2, name: "Ankita", role: "Software Developer", company: "Pocket FM", image: "/speakers/sp2.jpeg", socials: { twitter: "https://www.instagram.com/ankitach_23/", linkedin: "https://www.linkedin.com/in/ankita-chaudhary-9a55201bb/" } },
-    { id: 3, name: "Yajur", role: "Product Manager", company: "Builder.ai", image: "/speakers/sp3.jpeg", socials: { twitter: "https://www.instagram.com/yajurbajaj01/", linkedin: "https://www.linkedin.com/in/yajurbajaj/" } },
-    { id: 4, name: "Nishant", role: "Software Engineer", company: "Pocket FM", image: "/speakers/sp4.jpg", socials: { twitter: "https://www.instagram.com/iinishantxchandel/", linkedin: "https://www.linkedin.com/in/inishantxchandel/" } },
+    { id: 1, name: "Umang", role: "Developer and Maintainer", company: "zop.dev", image: "/speakers/sp1.jpeg", socials: { instagram: "https://www.instagram.com/umang_iam/", linkedin: "https://www.linkedin.com/in/umang01-hash/" } },
+    { id: 2, name: "Ankita", role: "Software Developer", company: "Pocket FM", image: "/speakers/sp2.jpeg", socials: { instagram: "https://www.instagram.com/ankitach_23/", linkedin: "https://www.linkedin.com/in/ankita-chaudhary-9a55201bb/" } },
+    { id: 3, name: "Yajur", role: "Product Manager", company: "Builder.ai", image: "/speakers/sp3.jpeg", socials: { instagram: "https://www.instagram.com/yajurbajaj01/", linkedin: "https://www.linkedin.com/in/yajurbajaj/" } },
+    { id: 4, name: "Nishant", role: "Software Engineer", company: "Pocket FM", image: "/speakers/sp4.jpg", socials: { instagram: "https://www.instagram.com/iinishantxchandel/", linkedin: "https://www.linkedin.com/in/inishantxchandel/" } },
+    { id: 5, name: "Gaurav", role: "Co-Founder and CTO", company: "niwi", image: "/speakers/sp5.jpeg", socials: { instagram: "https://www.instagram.com/gaurav.madaan9", linkedin: "https://www.linkedin.com/in/codestellar/" } },
   ];
 
   useEffect(() => {
@@ -137,9 +138,8 @@ const SpeakersSection: React.FC = () => {
                   api?.scrollTo(index);
                   handleUserInteraction();
                 }}
-                className={`w-3 h-3 rounded-full transition-all duration-300 mb-2 ${
-                  current === index ? "bg-white shadow-[0_0_15px_5px_rgba(92,229,250,0.7)]" : "bg-[#5CE5FA]/50 hover:shadow-[0_0_10px_2px_rgba(92,229,250,0.4)]"
-                }`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 mb-2 ${current === index ? "bg-white shadow-[0_0_15px_5px_rgba(92,229,250,0.7)]" : "bg-[#5CE5FA]/50 hover:shadow-[0_0_10px_2px_rgba(92,229,250,0.4)]"
+                  }`}
                 aria-label={`Go to speaker ${index + 1}`}
               />
             ))}
