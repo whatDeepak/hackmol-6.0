@@ -35,6 +35,21 @@ const partners = [
     logo: "/partners/p6.png",
     title: "GDG UICT",
   },
+  {
+    id: 7,
+    logo: "/partners/p7.png",
+    title: "GDG UIET",
+  },
+  {
+    id: 8,
+    logo: "/partners/p8.png",
+    title: "GDG Chandigarh",
+  },
+  {
+    id: 9,
+    logo: "/partners/p9.png",
+    title: "GDG GLA",
+  },
 ];
 
 
