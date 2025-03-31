@@ -31,10 +31,47 @@ export default function Home() {
   //   { top: string; left: string }[]
   // >([]);
 
+  // Add countdown timer state and logic
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  })
+
+  // Event start date: April 10th, 2025 at 8 AM
+  const eventDate = new Date("April 10, 2025 08:00:00").getTime()
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const now = new Date().getTime()
+      const distance = eventDate - now
+
+      if (distance < 0) {
+        clearInterval(timer)
+        setTimeLeft({
+          days: 0,
+          hours: 0,
+          minutes: 0,
+          seconds: 0,
+        })
+      } else {
+        setTimeLeft({
+          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((distance % (1000 * 60)) / 1000),
+        })
+      }
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [eventDate])
+
   useEffect(() => {
     setIsMounted(true);
     // Generate random stars
-    const adjustedSize=window.innerWidth<768?0.5:1.5;
+    const adjustedSize = window.innerWidth < 768 ? 0.5 : 1.5;
     const generatedStars = Array.from({ length: 220 }, () => ({
       x: Math.random() * 100,
       y: Math.random() * 100,
@@ -70,7 +107,7 @@ export default function Home() {
   const axePosition = isMounted ? 0 + scrollY * 0.22 : 0;
   const frontMountainPosition = isMounted ? 0 + scrollY * 0.25 : 0;
   const crowPosition = isMounted ? scrollY * 0.3 : 0;
-  
+
   const titleOpacity = isMounted ? 1 - scrollY * 0.002 : 1;
   const titlePosition = isMounted ? 0 + scrollY * 0.4 : 0;
 
@@ -93,7 +130,7 @@ export default function Home() {
           <Meteors number={8} className="z-0 pointer-events-none " />
           {/* Stars */}
           {stars.map((star, index) => (
-            
+
             <div
               key={index}
               className="absolute rounded-full bg-white animate-twinkle"
@@ -104,9 +141,8 @@ export default function Home() {
                 height: `${star.size}px`,
                 opacity: star.opacity,
                 transform: `translateY(${scrollY * star.speed}px)`,
-                animation: `twinkle ${2 + Math.random() * 3}s infinite ${
-                  Math.random() * 2
-                }s`,
+                animation: `twinkle ${2 + Math.random() * 3}s infinite ${Math.random() * 2
+                  }s`,
                 zIndex: 5,
               }}
             />
@@ -179,9 +215,8 @@ export default function Home() {
           <div
             className="absolute top-[8%] left-[2%] md:top-[15%] md:left-[5%] lg:left-[10%] lg:top-[20%] z-50 w-32 md:w-48"
             style={{
-              transform: `translate(${crowPosition}px, ${
-                -crowPosition * 0.5
-              }px)`,
+              transform: `translate(${crowPosition}px, ${-crowPosition * 0.5
+                }px)`,
               animation: "fly 15s linear infinite",
               transition: "transform 0.1s ease-out",
               filter: "invert(1)",
@@ -212,15 +247,45 @@ export default function Home() {
               hack the realms
             </p>
 
-            <DevfolioButton />
+            {/* Countdown Timer */}
+            <div className="flex flex-col items-center gap-2 mb-4">
+              <div className="flex gap-3 sm:gap-4 text-center">
+                <div className="flex flex-col items-center">
+                  <div className="bg-[#0a2a35] bg-opacity-70 border border-[#4fd1d9] rounded-lg w-14 sm:w-20 h-14 sm:h-20 flex items-center justify-center">
+                    <span className="text-xl sm:text-3xl font-bold text-[#4fd1d9]">{timeLeft.days}</span>
+                  </div>
+                  <span className="text-xs sm:text-sm text-[#a8d5e3] mt-1">Days</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="bg-[#0a2a35] bg-opacity-70 border border-[#4fd1d9] rounded-lg w-14 sm:w-20 h-14 sm:h-20 flex items-center justify-center">
+                    <span className="text-xl sm:text-3xl font-bold text-[#4fd1d9]">{timeLeft.hours}</span>
+                  </div>
+                  <span className="text-xs sm:text-sm text-[#a8d5e3] mt-1">Hours</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="bg-[#0a2a35] bg-opacity-70 border border-[#4fd1d9] rounded-lg w-14 sm:w-20 h-14 sm:h-20 flex items-center justify-center">
+                    <span className="text-xl sm:text-3xl font-bold text-[#4fd1d9]">{timeLeft.minutes}</span>
+                  </div>
+                  <span className="text-xs sm:text-sm text-[#a8d5e3] mt-1">Minutes</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="bg-[#0a2a35] bg-opacity-70 border border-[#4fd1d9] rounded-lg w-14 sm:w-20 h-14 sm:h-20 flex items-center justify-center">
+                    <span className="text-xl sm:text-3xl font-bold text-[#4fd1d9]">{timeLeft.seconds}</span>
+                  </div>
+                  <span className="text-xs sm:text-sm text-[#a8d5e3] mt-1">Seconds</span>
+                </div>
+              </div>
+            </div>
+
 
             {/* Enhanced scroll indicator */}
-            <div className="animate-bounce mt-4">
+            {/* <div className="fixed bottom-4 right-4 animate-bounce">
               <div className="w-8 h-12 rounded-full border-2 border-[#4fd1d9] flex justify-center relative overflow-hidden">
                 <div className="w-1 h-3 bg-[#4fd1d9] rounded-full mt-2 animate-scrollPulse"></div>
                 <div className="absolute inset-0 bg-[#4fd1d9] opacity-10 animate-glow"></div>
               </div>
-            </div>
+            </div> */}
+
           </div>
         </div>
 
@@ -392,13 +457,13 @@ export default function Home() {
         `}</style>
       </main>
       <AboutUs />
-      <EventTimeline events={[]}/>
-      <MainTracks/>
-      <SponserTrackCarousel/>
+      <EventTimeline events={[]} />
+      <MainTracks />
+      <SponserTrackCarousel />
       {/* <PrizesSection/> */}
       <OurSpeakers />
       <FAQSection />
-      <Footer/>
+      <Footer />
     </>
   );
 }
