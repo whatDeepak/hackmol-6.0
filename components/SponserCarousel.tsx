@@ -41,9 +41,9 @@ const sponsors = [
   {
     id: 4,
     logo: "/sponsors/csharp.png",
-    title: "C# (Bronze Sponsor)",
+    title: "CSharp (Silver Sponsor)",
     description:
-      "C# (pronounced 'C-sharp') is a modern, open-source, object-oriented language by Microsoft for .NET. CSharp.com is a global developer community offering tutorials, videos, podcasts, conferences, hackathons, and certifications for professional growth.",
+      "CSharp.com is a global community focused on members' education and growth through tutorials, videos, podcasts, conferences, hackathons, certifications, speaking opportunities, and mentorship programs.",
     features: [
       "Modern, open-source programming language",
       "Global community for developer education",
