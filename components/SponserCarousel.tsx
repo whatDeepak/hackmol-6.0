@@ -50,6 +50,18 @@ const sponsors = [
       "Silver Sponsor",
     ],
   },
+  {
+    id: 5,
+    logo: "/sponsors/appwrite.png",
+    title: "AppWrite (In-kind Sponsor)",
+    description:
+      "Appwrite is an open-source backend-as-a-service that provides powerful APIs for authentication, databases, storage, and serverless functions.",
+    features: [
+      "Open-source and self-hostable",
+      "Comprehensive authentication support",
+      "In-Kind Sponsor",
+    ],
+  },
 ];
 
 export default function SponserCarousel() {
