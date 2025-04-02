@@ -52,7 +52,7 @@ const sponsors = [
   },
   {
     id: 5,
-    logo: "/sponsors/appwrite.png",
+    logo: "/sponsors/appWrite.png",
     title: "AppWrite (In-kind Sponsor)",
     description:
       "Appwrite is an open-source backend-as-a-service that provides powerful APIs for authentication, databases, storage, and serverless functions.",
